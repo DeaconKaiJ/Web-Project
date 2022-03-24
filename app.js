@@ -9,6 +9,9 @@ function loadImages(numImages = 10){
     let i = 0;
     while(i < numImages){
         const img = document.createElement('img')
-        img.src = 
+        img.src = `${URL}${getRandNum()}`
+        container.appendChild(img)
+        i++
     }
 }
+loadImages()
