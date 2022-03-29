@@ -1,26 +1,72 @@
-.column1 {
-    position: relative;
-    float:left;
-    min-height: 100vh;
-    width: 5%;
+*,html{
+    margin:0;
+    padding:0;  
 }
-.column2 {
-    position: relative;
-    float:left;
-    min-height: 100vh;
-    width: 75%;
-}
-.column3 {
-    position: relative;
-    float:left;
-    min-height: 100vh;
-    width: 20%;
-}
-.container{
-    display: flex;
-    flex-wrap: wrap;
-}
-img {
+.pageTitle{
     margin: 5px;
-    size: 100px;
+    padding: 5px;
+    font-size: large;
+    font-style: italic;
+    font-weight: bold;
+    border-bottom: 4px solid #CCC;
+}
+.FlexBox-Container{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.FlexAll {
+    min-height: 100vh;
+}
+
+.Flex1 {
+    position: fixed;
+    width: 10%;
+    background-color: red;
+}
+
+.Flex2 {
+    margin-left: 10%;
+    width: 70%;
+    background-color: aqua;
+}
+
+.Flex3 {
+    margin-left: 80%;
+    position: fixed;
+    width: 20%;
+    background-color: black;
+}
+
+.NavButtons{
+    display: flex;
+    flex-direction: column;
+    padding: 16px 12px;
+}
+.NavBTN{
+    height: 50px;
+    width: 100%;
+}
+.NavButtons .NavBTN span{
+    color: green;
+    font-weight: 500;
+    text-decoration: none;
+    outline: none;
+}
+a{
+    text-decoration: none;
+    outline: none;
+    color: green;
+}
+.HomeBTN{
+
+}
+.CreateBTN{
+
+}
+.MetaBTN{
+}
+.KeyTermsBTN{
+}
+.GuideBTN{
 }
