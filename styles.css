@@ -10,7 +10,7 @@
     font-weight: bold;
 }
 .pageTitle span{
-    color: white;
+    color: #d9d9d9;
 }
 .FlexBox-Container{
     display: flex;
@@ -26,8 +26,17 @@
     min-width: 150px;
     width: 10%;
     background-color: #003300;
-    border-right:2px solid #CCC;
+    border-right:2px solid #d9d9d9;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: calc(100% - 60px);
 }
+::-webkit-scrollbar {
+    height: 50%;
+    width: 5px;
+    background-color: #d9d9d9;
+    border-radius: 10px;
+  }
 
 .Flex2 {
     margin-left: 10%;
@@ -40,34 +49,34 @@
     margin-left: 80%;
     position: fixed;
     width: 20%;
-    background-color: black;
+    background-color: #003300;
 }
 
 .NavButtons{
     display: flex;
     flex-direction: column;
     padding: 20px 10px;
-    border-top: 2px solid white;
-    border-bottom: 2px solid white;
+    border-top: 2px solid #d9d9d9;
+    border-bottom: 2px solid #d9d9d9;
 }
 .NavBTN{
     height: 40px;
 }
 
 .NavButtons .NavBTN a, a:link, a:focus, a:hover, a:visited{
-    color: white;
+    color: #d9d9d9;
     font-weight: 500;
     text-decoration: none;
     outline: none;
 }
 
 .Legal{
-    margin-top: 190px;
+    margin-top: 250px;
 }
 .Legal span{
-    font-weight: 100;
-    color: white;
-    font-size: small;
+    font-weight: 500;
+    color: #d9d9d9;
+    font-size: 0.6em;
 }
 .HomeBTN{
 
