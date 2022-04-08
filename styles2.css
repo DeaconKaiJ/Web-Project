@@ -12,8 +12,8 @@
 }
 .Flex1 {
     position: fixed;
-    width: 250px;
-    min-width: 250px;
+    width: 175px;
+    min-width: 175px;
     display: flex;
     flex-direction: column;
     background-color: white;
@@ -99,8 +99,7 @@
 .Flex2{
     margin-left: auto;
     background-color: black;
-    width: calc(100% - 250px);
-    min-width: 600px;
+    width: calc(100% - 175px);
 }
 .userBuilds{
     display: flex;
@@ -109,26 +108,69 @@
 }
 .uBuild{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     background-color: aqua;
     margin:auto;
     height: auto;
     width: 70%;
     border: 10px solid white;
+    min-width: 700px;
 }
+.collapsible{
+    display: flex;
+}
+.active, .collapsible:hover {
+    background-color: #555;
+  }
+  .content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+  }
 .champPicture{
     display: flex;
-    width: 150px;
-    flex: 0 0 150px;
+    width: 100px;
+    flex: 0 0 100px;
 }
 .champNameSkillOrder{
     display: flex;
     flex-direction: column;
-    flex: 0 0 150px;
-    width: 150px;
-    gap:15px;
+    flex: 0 0 280px;
+    width: 280px;
+    gap:4px;
+}
+.champName{
+    font-size: 40px;
 }
 .champSkillOrder{
     display: flex;
     flex-direction: row;
+    margin:auto;
+    font-size: 25px;
+    gap: 8px;
+}
+.skills{
+    border: 3px solid black;
+}
+.champRS{
+    display: flex;
+    flex-direction: row;
+    flex: 0 0 100px;
+    gap:10px;
+}
+.champRunes{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: auto;
+}
+.champSS{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: auto;
+}
+.buildTitle{
+    font-size: 25px;
 }
