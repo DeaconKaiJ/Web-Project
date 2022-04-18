@@ -105,6 +105,23 @@
     display: flex;
     flex-direction: column;
     border: 10px solid white;
+    gap: 10px;
+}
+.createFilter{
+    margin: auto;
+    background-color: aqua;
+    height: 100px;
+    width: 70%;
+    border: 5px solid white;
+    min-width: 850px;
+}
+.createButton{
+    margin: auto;
+    background-color: aqua;
+    height: auto;
+    width: 100%;
+    border: 5px solid white;
+    min-width: 850px;
 }
 .uBuild{
     display: flex;
@@ -113,21 +130,9 @@
     margin:auto;
     height: auto;
     width: 70%;
-    border: 10px solid white;
-    min-width: 700px;
+    border: 5px solid white;
+    min-width: 850px;
 }
-.collapsible{
-    display: flex;
-}
-.active, .collapsible:hover {
-    background-color: #555;
-  }
-  .content {
-    padding: 0 18px;
-    display: none;
-    overflow: hidden;
-    background-color: #f1f1f1;
-  }
 .champPicture{
     display: flex;
     width: 100px;
@@ -158,19 +163,72 @@
     flex-direction: row;
     flex: 0 0 100px;
     gap:10px;
+    margin: auto;
 }
 .champRunes{
     display: flex;
     flex-direction: column;
     gap: 5px;
-    margin: auto;
+    
 }
 .champSS{
     display: flex;
     flex-direction: column;
     gap: 5px;
+    
+}
+.titleItems{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     margin: auto;
 }
 .buildTitle{
     font-size: 25px;
 }
+.buildItems{
+    display: flex;
+    gap: 10px;
+}
+.collapsible{
+    display: flex;
+}
+.active, .collapsible:hover {
+    background-color: #555;
+  }
+.content {
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+.skillorderRunes{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.runes{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+}
+.runes span{
+    font-weight: bold;
+}
+.MainRunes{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+.SupportRunes{
+    display: flex;
+    gap: 8px;
+}
+.RuneAttributes{
+    display: flex;
+    gap: 8px;
+}
+table, th, td {
+    border:1px solid black;
+  }
