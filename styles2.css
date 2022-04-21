@@ -126,10 +126,9 @@
 }
 /* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
+    display:block; /* Hidden by default */
+    position:absolute; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -140,11 +139,21 @@
 }  
 /* Modal Content */
 .modal-content {
+    margin:auto;
+    margin-top: 20px;
     background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 40%;
+    height: 700px;
+}
+.modal-header{
+    background-color: hotpink;
+    height: 50px;
+    font-size: 40px;
+    text-align: center;
+}
+.modal-body{
+    
 }
 /* The Close Button */
 .close {
