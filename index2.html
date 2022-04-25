@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +8,11 @@
     <link rel="stylesheet" href="styles2.css">
     <script src="https://kit.fontawesome.com/4e724250be.js" crossorigin="anonymous"></script>
     <script src="formChamps.js" defer></script>
+    <script src="allItems.js" defer></script>
+    <script src="summonerSpells.js" defer></script>
     <title>Document</title>
 </head>
+
 <body>
     <div class="FlexBox-Container">
         <div class="FlexAll Flex1">
@@ -30,15 +34,16 @@
                     <input class="sPlayer_txt" type="search" placeholder="Player">
                 </div>
             </div>
-            <div class="Legal"><span class>This project is not endorsed by Riot Games and does not reflect 
-                the views or opinions of Riot Games or anyone officially involved in producing 
-                or managing League of Legends. League of Legends and Riot Games are trademarks or 
-                registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.</span></div>
+            <div class="Legal"><span class>This project is not endorsed by Riot Games and does not reflect
+                    the views or opinions of Riot Games or anyone officially involved in producing
+                    or managing League of Legends. League of Legends and Riot Games are trademarks or
+                    registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.</span></div>
         </div>
         <div class="FlexAll Flex2">
             <div class="userBuilds">
                 <div class="createFilter">
-                    <button type="button" class="createButton"><i class="fa-solid fa-circle-plus" style="font-size: 32px;"></i></button>
+                    <button type="button" class="createButton"><i class="fa-solid fa-circle-plus"
+                            style="font-size: 32px;"></i></button>
                     <!-- The Modal -->
                     <div class="modal">
                         <!-- Modal content -->
@@ -49,12 +54,304 @@
                             </div>
                             <div class="modal-body">
                                 <form action="/action_page.php">
-                                    <label for="champs">Choose a Champion:</label>
-                                    <select name="champs" id="champs">
-                                    </select>
+
+                                    <div class="topCreate">
+                                        <label for="buildName">Build Name:</label><input type="text" id="buildName"
+                                            name="buildName" />
+                                        <label for="champs">Choose a Champion:</label>
+                                        <select name="champs" id="champs">
+                                        </select>
+                                        <br><br>
+                                    </div>
+                                    <div class="createItems">
+                                        <div class="first3">
+                                            <label for="item1">First Item built:</label>
+                                            <select name="item1" id="item1">
+                                            </select>
+                                            <label for="item2">Second Item built:</label>
+                                            <select name="item2" id="item2">
+                                            </select>
+                                            <label for="item3">Third Item built:</label>
+                                            <select name="item3" id="item3">
+                                            </select>
+                                            <br><br>
+                                        </div>
+                                        <div class="last3">
+                                            <label for="item4">Fourth Item built:</label>
+                                            <select name="item4" id="item4">
+                                            </select>
+                                            <label for="item5">Fifth Item built:</label>
+                                            <select name="item5" id="item5">
+                                            </select>
+                                            <label for="item6">Sixth Item built:</label>
+                                            <select name="item6" id="item6">
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="createSS">
+                                        <label for="summonerSpells1">Summoner Spell:</label>
+                                        <select name="summonerSpells1" id="summonerSpells1">
+                                        </select>
+                                        <label for="summonerSpells2">Summoner Spell:</label>
+                                        <select name="summonerSpells2" id="summonerSpells2">
+                                        </select>
+                                        <br><br>
+                                    </div>
+                                    <div class="createRunes">
+                                        <div class="createMainRunes">
+                                            <label for="mainKeystone">Main Keystone:</label>
+                                            <select name="mainKeystone" id="mainKeystone">
+                                            </select>
+
+                                            <label for="mainRune">Main Rune:</label>
+                                            <select name="mainRune" id="mainRune">
+                                            </select>
+
+                                            <label for="mainRune2">Main Rune 2 Line:</label>
+                                            <select name="mainRune2" id="mainRune2">
+                                            </select>
+
+                                            <label for="mainRune3">Main Rune 3 Line:</label>
+                                            <select name="mainRune3" id="mainRune3">
+                                            </select>
+
+                                            <label for="mainRune4">Main Rune 4 Line:</label>
+                                            <select name="mainRune4" id="mainRune4">
+                                            </select>
+
+                                        </div>
+
+                                        <div class="createSubRunes">
+                                            <label for="subKeystone">Sub Keystone:</label>
+                                            <select name="subKeystone" id="subKeystone">
+                                            </select>
+
+                                            <label for="subRune1">Sub Rune Option 1:</label>
+                                            <select name="subRune1" id="subRune1">
+                                            </select>
+
+                                            <label for="subRune2">Sub Rune Option 2:</label>
+                                            <select name="subRune2" id="subRune2">
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="createAddRunes">
+                                        <label for="addRune1">Additional Rune Option 1:</label>
+                                        <select name="addRune1" id="addRune1">
+                                            <option value="AdaptiveForce">Adaptive Force</option>
+                                            <option value="AttackSpeed">Attack Speed</option>
+                                            <option value="AbilityHaste">Ability Haste</option>
+                                        </select>
+
+                                        <label for="addRune2">Additional Rune Option 2:</label>
+                                        <select name="addRune2" id="addRune2">
+                                            <option value="AdaptiveForce">Adaptive Force</option>
+                                            <option value="Armor">Armor</option>
+                                            <option value="Magic Resist">Magic Resist</option>
+                                        </select>
+
+                                        <label for="addRune3">Additional Rune Option 3:</label>
+                                        <select name="addRune3" id="addRune3">
+                                            <option value="Health">Health</option>
+                                            <option value="Armor">Armor</option>
+                                            <option value="Magic Resist">Magic Resist</option>
+                                        </select>
+
+                                    </div>
+                                    <script src="allRunes.js"></script>
                                     <br><br>
+                                    <div class="createMaxSkills">
+                                        <div class="first2">
+                                            <label for="maxSkill1">Max skill option 1:</label>
+                                            <select name="maxSkill1" id="maxSkill1">
+                                                <option value="Q">Q</option>
+                                                <option value="W">W</option>
+                                                <option value="E">E</option>
+                                                <option value="R">R</option>
+                                            </select>
+                                            <label for="maxSkill2">Max skill option 2:</label>
+                                            <select name="maxSkill2" id="maxSkill2">
+                                                <option value="Q">Q</option>
+                                                <option value="W">W</option>
+                                                <option value="E">E</option>
+                                                <option value="R">R</option>
+                                            </select>
+                                        </div>
+                                        <div class="last2">
+                                            <label for="maxSkill3">Max skill option 3:</label>
+                                            <select name="maxSkill3" id="maxSkill3">
+                                                <option value="Q">Q</option>
+                                                <option value="W">W</option>
+                                                <option value="E">E</option>
+                                                <option value="R">R</option>
+                                            </select>
+
+                                            <label for="maxSkill4">Max skill option 4:</label>
+                                            <select name="maxSkill4" id="maxSkill4">
+                                                <option value="Q">Q</option>
+                                                <option value="W">W</option>
+                                                <option value="E">E</option>
+                                                <option value="R">R</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <br><br>
+                                    <div class="createSkillOrder">
+                                        <div class="first9">
+                                            <label for="levelSkill1">1:</label>
+                                            <select name="levelSkill1" id="levelSkill1">
+                                                <option value="Q">Q</option>
+                                                <option value="W">W</option>
+                                                <option value="E">E</option>
+                                                <option value="R">R</option>
+                                            </select>
+
+                                            <label for="levelSkill2">2:</label>
+                                            <select name="levelSkill2" id="levelSkill2">
+                                                <option value="Q">Q</option>
+                                                <option value="W">W</option>
+                                                <option value="E">E</option>
+                                                <option value="R">R</option>
+                                            </select>
+
+                                            <label for="levelSkill3">3:</label>
+                                            <select name="levelSkill3" id="levelSkill3">
+                                                <option value="Q">Q</option>
+                                                <option value="W">W</option>
+                                                <option value="E">E</option>
+                                                <option value="R">R</option>
+                                            </select>
+
+                                            <label for="levelSkill4">4:</label>
+                                            <select name="levelSkill4" id="levelSkill4">
+                                                <option value="Q">Q</option>
+                                                <option value="W">W</option>
+                                                <option value="E">E</option>
+                                                <option value="R">R</option>
+                                            </select>
+
+                                            <label for="levelSkill5">5:</label>
+                                            <select name="levelSkill5" id="levelSkill5">
+                                                <option value="Q">Q</option>
+                                                <option value="W">W</option>
+                                                <option value="E">E</option>
+                                                <option value="R">R</option>
+                                            </select>
+
+                                            <label for="levelSkill6">6:</label>
+                                            <select name="levelSkill6" id="levelSkill6">
+                                                <option value="Q">Q</option>
+                                                <option value="W">W</option>
+                                                <option value="E">E</option>
+                                                <option value="R">R</option>
+                                            </select>
+
+                                            <label for="levelSkill7">7:</label>
+                                            <select name="levelSkill7" id="levelSkill7">
+                                                <option value="Q">Q</option>
+                                                <option value="W">W</option>
+                                                <option value="E">E</option>
+                                                <option value="R">R</option>
+                                            </select>
+
+                                            <label for="levelSkill8">8:</label>
+                                            <select name="levelSkill8" id="levelSkill8">
+                                                <option value="Q">Q</option>
+                                                <option value="W">W</option>
+                                                <option value="E">E</option>
+                                                <option value="R">R</option>
+                                            </select>
+
+                                            <label for="levelSkill9">9:</label>
+                                            <select name="levelSkill9" id="levelSkill9">
+                                                <option value="Q">Q</option>
+                                                <option value="W">W</option>
+                                                <option value="E">E</option>
+                                                <option value="R">R</option>
+                                            </select>
+                                        </div>
+                                        <div class="last9">
+                                            <label for="levelSkill10">10:</label>
+                                            <select name="levelSkill10" id="levelSkill10">
+                                                <option value="Q">Q</option>
+                                                <option value="W">W</option>
+                                                <option value="E">E</option>
+                                                <option value="R">R</option>
+                                            </select>
+
+                                            <label for="levelSkill11">11:</label>
+                                            <select name="levelSkill11" id="levelSkill11">
+                                                <option value="Q">Q</option>
+                                                <option value="W">W</option>
+                                                <option value="E">E</option>
+                                                <option value="R">R</option>
+                                            </select>
+
+                                            <label for="levelSkill12">12:</label>
+                                            <select name="levelSkill12" id="levelSkill12">
+                                                <option value="Q">Q</option>
+                                                <option value="W">W</option>
+                                                <option value="E">E</option>
+                                                <option value="R">R</option>
+                                            </select>
+
+                                            <label for="levelSkill13">13:</label>
+                                            <select name="levelSkill13" id="levelSkill13">
+                                                <option value="Q">Q</option>
+                                                <option value="W">W</option>
+                                                <option value="E">E</option>
+                                                <option value="R">R</option>
+                                            </select>
+
+                                            <label for="levelSkill14">14:</label>
+                                            <select name="levelSkill14" id="levelSkill14">
+                                                <option value="Q">Q</option>
+                                                <option value="W">W</option>
+                                                <option value="E">E</option>
+                                                <option value="R">R</option>
+                                            </select>
+
+                                            <label for="levelSkill15">15:</label>
+                                            <select name="levelSkill15" id="levelSkill15">
+                                                <option value="Q">Q</option>
+                                                <option value="W">W</option>
+                                                <option value="E">E</option>
+                                                <option value="R">R</option>
+                                            </select>
+
+                                            <label for="levelSkill16">16:</label>
+                                            <select name="levelSkill16" id="levelSkill16">
+                                                <option value="Q">Q</option>
+                                                <option value="W">W</option>
+                                                <option value="E">E</option>
+                                                <option value="R">R</option>
+                                            </select>
+
+                                            <label for="levelSkill17">17:</label>
+                                            <select name="levelSkill17" id="levelSkill17">
+                                                <option value="Q">Q</option>
+                                                <option value="W">W</option>
+                                                <option value="E">E</option>
+                                                <option value="R">R</option>
+                                            </select>
+
+                                            <label for="levelSkill18">18:</label>
+                                            <select name="levelSkill18" id="levelSkill18">
+                                                <option value="Q">Q</option>
+                                                <option value="W">W</option>
+                                                <option value="E">E</option>
+                                                <option value="R">R</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <br><br>
+
+                                    <label for="paragraph">Additional comments</label><br>
+                                    <textarea id="paragraph" name="paragraph" rows="6" cols="79"></textarea>
                                     <input type="submit" value="Submit">
-                                  </form>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -62,46 +359,39 @@
                 </div>
                 <div class="uBuild">
                     <button type="button" class="collapsible">
-                        <div class="champPicture"><img src="https://preview.redd.it/eet8cl309bt71.png?auto=webp&s=1d30b76e99a05d7a35e13f77feffa88a4c0dc48c"
-                            style="width:100px;height:100px;"></div>
-                    <div class="champNameSkillOrder">
-                        <div class="champName"><span class>Nunu&Willump</span></div>
-                        <div class="champSkillOrder">
-                            <div class="skills skill1">Q</div>
-                            <div class="skills skill2">W</div>
-                            <div class="skills skill3">E</div>
-                            <div class="skills skill4">R</div>
+                        <div class="champPicture"><img
+                                src="https://preview.redd.it/eet8cl309bt71.png?auto=webp&s=1d30b76e99a05d7a35e13f77feffa88a4c0dc48c"
+                                style="width:100px;height:100px;"></div>
+                        <div class="champNameSkillOrder">
+                            <div class="champName"><span class>Nunu&Willump</span></div>
+                            <div class="champSkillOrder">
+                                <div class="skills skill1">Q</div>
+                                <div class="skills skill2">W</div>
+                                <div class="skills skill3">E</div>
+                                <div class="skills skill4">R</div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="champRS">
-                        <div class="champRunes">
-                            <div class="rune1"><img src="https://static.wikia.nocookie.net/leagueoflegends/images/d/d8/PrecisionSquare.png/revision/latest/scale-to-width-down/250?cb=20170927105636"
-                                style="width:40px;height:40px;"></div>
-                            <div class="rune2"><img src="https://static.wikia.nocookie.net/leagueoflegends/images/9/91/InspirationSquare.png/revision/latest/scale-to-width-down/250?cb=20170927105636"
-                                style="width:40px;height:40px;"></div>
+                        <div class="champRS">
+                            <div class="champRunes">
+                                <div class="rune1">Precision</div>
+                                <div class="rune2">Domination</div>
+                            </div>
+                            <div class="champSS">
+                                <div class="ss1">Teleport</div>
+                                <div class="ss2">Flash</div>
+                            </div>
                         </div>
-                        <div class="champSS">
-                            <div class="ss1"><img src="https://www.hiepsibaotap.com/wp-content/uploads/2018/11/Flash_HD.png" style="width:40px;height:40px;"></div>
-                            <div class="ss2"><img src="https://img.rankedboost.com/wp-content/uploads/2020/06/Teleport-Enchant-Wild-Rift.png" style="width:40px;height:40px;"></div>
+                        <div class="titleItems">
+                            <div class="buildTitle">Maximum Characters is thirty!!</div>
+                            <div class="buildItems">
+                                <div class="buildItems1">Boots of swift</div>
+                                <div class="buildItems2">lich bane</div>
+                                <div class="buildItems3">hextech gunblade</div>
+                                <div class="buildItems4">lockets of the iron solari</div>
+                                <div class="buildItems5">zhonya hourglass</div>
+                                <div class="buildItems6">frozen mallet</div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="titleItems">
-                        <div class="buildTitle">Maximum Characters is thirty!!</div>
-                        <div class="buildItems">
-                            <div class="buildItems1"><img src="https://www.hiepsibaotap.com/wp-content/uploads/2018/11/Flash_HD.png" 
-                                style="width:40px;height:40px;"></div>
-                            <div class="buildItems2"><img src="https://www.hiepsibaotap.com/wp-content/uploads/2018/11/Flash_HD.png" 
-                                style="width:40px;height:40px;"></div>
-                            <div class="buildItems3"><img src="https://www.hiepsibaotap.com/wp-content/uploads/2018/11/Flash_HD.png" 
-                                style="width:40px;height:40px;"></div>
-                            <div class="buildItems4"><img src="https://www.hiepsibaotap.com/wp-content/uploads/2018/11/Flash_HD.png" 
-                                style="width:40px;height:40px;"></div>
-                            <div class="buildItems5"><img src="https://www.hiepsibaotap.com/wp-content/uploads/2018/11/Flash_HD.png" 
-                                style="width:40px;height:40px;"></div>
-                            <div class="buildItems6"><img src="https://www.hiepsibaotap.com/wp-content/uploads/2018/11/Flash_HD.png" 
-                                style="width:40px;height:40px;"></div>
-                        </div>
-                    </div>
                     </button>
                     <div class="content">
                         <div class="skillorderRunes">
@@ -155,55 +445,71 @@
                                 <div class="MainRunes">
                                     <div class="mainRuneTree"><span class>Precision</span></div>
                                     <div class="keystone">Press the Attack</div>
-                                    <div class="mainRune1">Prescence of mind</div>
-                                    <div class="mainRune2">Legend:Alacrity</div>
-                                    <div class="mainRune3">Coup de Grace</div>
+                                    <div class="mainRune1!">Prescence of mind</div>
+                                    <div class="mainRune2!">Legend:Alacrity</div>
+                                    <div class="mainRune3!">Coup de Grace</div>
                                 </div>
                                 <div class="SupportRunes">
                                     <div class="supportRuneTree"><span class>Domination</span></div>
-                                    <div class="supportRune1">Sudden Impact</div>
-                                    <div class="supportRune2">Eyeball Collection</div>
-                                    <div class="supportRune3">Relentless Hunter</div>
+                                    <div class="supportRune1!">Sudden Impact</div>
+                                    <div class="supportRune2!">Eyeball Collection</div>
+                                    <div class="supportRune3!">Relentless Hunter</div>
                                 </div>
                                 <div class="RuneAttributes">
-                                    <div class="attribute1">Offense:Attack Speed</div>
-                                    <div class="attribute2">Flex:Adaptive Force</div>
-                                    <div class="attribute3">Defense:Health</div>
+                                    <div class="attribute1!">Offense:Attack Speed</div>
+                                    <div class="attribute2!">Flex:Adaptive Force</div>
+                                    <div class="attribute3!">Defense:Health</div>
                                 </div>
                             </div>
                         </div>
-                        <div class="mainContent">Between these two, there is a strange relationship. Companies collect and analyze this data, but rarely do readers get to see it.
+                        <div class="mainContent">Between these two, there is a strange relationship. Companies collect
+                            and analyze this data, but rarely do readers get to see it.
 
-                            New data from Amazon, released to The Atlantic, gives us a peek at what, specifically, readers connect with. These are the most popular highlights in some of the service’s most popular books.
-                            
-                            Amazon doesn’t release sales data for Kindles, so the question of what makes the list of most-popular highlights is somewhat interesting. It takes more than 4,000 highlights to make something the most popular passage in Pride and Prejudice, but only about 650 for something to be the most popular highlight in The Lion, the Witch, and the Wardrobe.
-                            
-                            Below, you’ll find passages from Austen, Tolkien, the Bible, and every tome of Harry Potter. (With some spoilers—though don’t worry, it’s not that section of Half-Blood Prince.)
-                            
-                            Are these your favorite passages too? Are they the most beautiful, the most poetic, or just, well, the most maudlin?
-                            
+                            New data from Amazon, released to The Atlantic, gives us a peek at what, specifically,
+                            readers connect with. These are the most popular highlights in some of the service’s most
+                            popular books.
+
+                            Amazon doesn’t release sales data for Kindles, so the question of what makes the list of
+                            most-popular highlights is somewhat interesting. It takes more than 4,000 highlights to make
+                            something the most popular passage in Pride and Prejudice, but only about 650 for something
+                            to be the most popular highlight in The Lion, the Witch, and the Wardrobe.
+
+                            Below, you’ll find passages from Austen, Tolkien, the Bible, and every tome of Harry Potter.
+                            (With some spoilers—though don’t worry, it’s not that section of Half-Blood Prince.)
+
+                            Are these your favorite passages too? Are they the most beautiful, the most poetic, or just,
+                            well, the most maudlin?
+
                             The most popular from Pride and Prejudice:
-                            
-                            It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.
-                            
+
+                            It is a truth universally acknowledged, that a single man in possession of a good fortune,
+                            must be in want of a wife.
+
                             The Lord of the Rings:
-                            
-                            The wide world is all about you: you can fence yourselves in, but you cannot for ever fence it out.
-                            
-                            From the Bible (specifically, the New International Version—the best-selling electronic version on Amazon):
-                            
-                            Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God. And the peace of God, which transcends all understanding, will guard your hearts and your minds in Christ Jesus.
-                            
+
+                            The wide world is all about you: you can fence yourselves in, but you cannot for ever fence
+                            it out.
+
+                            From the Bible (specifically, the New International Version—the best-selling electronic
+                            version on Amazon):
+
+                            Do not be anxious about anything, but in every situation, by prayer and petition, with
+                            thanksgiving, present your requests to God. And the peace of God, which transcends all
+                            understanding, will guard your hearts and your minds in Christ Jesus.
+
                             Little Women:
-                            
-                            There are many Beths in the world, shy and quiet, sitting in corners till needed, and living for others so cheerfully that no one sees the sacrifices till the little cricket on the hearth stops chirping, and the sweet, sunshiny presence vanishes, leaving silence and shadow behind.
-                            
+
+                            There are many Beths in the world, shy and quiet, sitting in corners till needed, and living
+                            for others so cheerfully that no one sees the sacrifices till the little cricket on the
+                            hearth stops chirping, and the sweet, sunshiny presence vanishes, leaving silence and shadow
+                            behind.
+
                             A Wrinkle In Time:
-                            
+
                             But of course we can’t take any credit for our talents. It’s how we use them that counts.
-                            
+
                             The Lion, the Witch, and the Wardrobe:
-                            
+
                             Wrong will be right,
                             when Aslan comes in sight,
                             At the sound of his roar,
@@ -216,46 +522,59 @@
                 </div>
                 <div class="uBuild">
                     <button type="button" class="collapsible">
-                        <div class="champPicture"><img src="https://preview.redd.it/eet8cl309bt71.png?auto=webp&s=1d30b76e99a05d7a35e13f77feffa88a4c0dc48c"
-                            style="width:100px;height:100px;"></div>
-                    <div class="champNameSkillOrder">
-                        <div class="champName"><span class>Nunu&Willump</span></div>
-                        <div class="champSkillOrder">
-                            <div class="skills skill1">Q</div>
-                            <div class="skills skill2">W</div>
-                            <div class="skills skill3">E</div>
-                            <div class="skills skill4">R</div>
+                        <div class="champPicture"><img
+                                src="https://preview.redd.it/eet8cl309bt71.png?auto=webp&s=1d30b76e99a05d7a35e13f77feffa88a4c0dc48c"
+                                style="width:100px;height:100px;"></div>
+                        <div class="champNameSkillOrder">
+                            <div class="champName"><span class>Nunu&Willump</span></div>
+                            <div class="champSkillOrder">
+                                <div class="skills skill1">Q</div>
+                                <div class="skills skill2">W</div>
+                                <div class="skills skill3">E</div>
+                                <div class="skills skill4">R</div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="champRS">
-                        <div class="champRunes">
-                            <div class="rune1"><img src="https://static.wikia.nocookie.net/leagueoflegends/images/d/d8/PrecisionSquare.png/revision/latest/scale-to-width-down/250?cb=20170927105636"
-                                style="width:40px;height:40px;"></div>
-                            <div class="rune2"><img src="https://static.wikia.nocookie.net/leagueoflegends/images/9/91/InspirationSquare.png/revision/latest/scale-to-width-down/250?cb=20170927105636"
-                                style="width:40px;height:40px;"></div>
+                        <div class="champRS">
+                            <div class="champRunes">
+                                <div class="rune1"><img
+                                        src="https://static.wikia.nocookie.net/leagueoflegends/images/d/d8/PrecisionSquare.png/revision/latest/scale-to-width-down/250?cb=20170927105636"
+                                        style="width:40px;height:40px;"></div>
+                                <div class="rune2"><img
+                                        src="https://static.wikia.nocookie.net/leagueoflegends/images/9/91/InspirationSquare.png/revision/latest/scale-to-width-down/250?cb=20170927105636"
+                                        style="width:40px;height:40px;"></div>
+                            </div>
+                            <div class="champSS">
+                                <div class="ss1"><img
+                                        src="https://www.hiepsibaotap.com/wp-content/uploads/2018/11/Flash_HD.png"
+                                        style="width:40px;height:40px;"></div>
+                                <div class="ss2"><img
+                                        src="https://img.rankedboost.com/wp-content/uploads/2020/06/Teleport-Enchant-Wild-Rift.png"
+                                        style="width:40px;height:40px;"></div>
+                            </div>
                         </div>
-                        <div class="champSS">
-                            <div class="ss1"><img src="https://www.hiepsibaotap.com/wp-content/uploads/2018/11/Flash_HD.png" style="width:40px;height:40px;"></div>
-                            <div class="ss2"><img src="https://img.rankedboost.com/wp-content/uploads/2020/06/Teleport-Enchant-Wild-Rift.png" style="width:40px;height:40px;"></div>
+                        <div class="titleItems">
+                            <div class="buildTitle">Maximum Characters is thirty!!</div>
+                            <div class="buildItems">
+                                <div class="buildItems1"><img
+                                        src="https://www.hiepsibaotap.com/wp-content/uploads/2018/11/Flash_HD.png"
+                                        style="width:40px;height:40px;"></div>
+                                <div class="buildItems2"><img
+                                        src="https://www.hiepsibaotap.com/wp-content/uploads/2018/11/Flash_HD.png"
+                                        style="width:40px;height:40px;"></div>
+                                <div class="buildItems3"><img
+                                        src="https://www.hiepsibaotap.com/wp-content/uploads/2018/11/Flash_HD.png"
+                                        style="width:40px;height:40px;"></div>
+                                <div class="buildItems4"><img
+                                        src="https://www.hiepsibaotap.com/wp-content/uploads/2018/11/Flash_HD.png"
+                                        style="width:40px;height:40px;"></div>
+                                <div class="buildItems5"><img
+                                        src="https://www.hiepsibaotap.com/wp-content/uploads/2018/11/Flash_HD.png"
+                                        style="width:40px;height:40px;"></div>
+                                <div class="buildItems6"><img
+                                        src="https://www.hiepsibaotap.com/wp-content/uploads/2018/11/Flash_HD.png"
+                                        style="width:40px;height:40px;"></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="titleItems">
-                        <div class="buildTitle">Maximum Characters is thirty!!</div>
-                        <div class="buildItems">
-                            <div class="buildItems1"><img src="https://www.hiepsibaotap.com/wp-content/uploads/2018/11/Flash_HD.png" 
-                                style="width:40px;height:40px;"></div>
-                            <div class="buildItems2"><img src="https://www.hiepsibaotap.com/wp-content/uploads/2018/11/Flash_HD.png" 
-                                style="width:40px;height:40px;"></div>
-                            <div class="buildItems3"><img src="https://www.hiepsibaotap.com/wp-content/uploads/2018/11/Flash_HD.png" 
-                                style="width:40px;height:40px;"></div>
-                            <div class="buildItems4"><img src="https://www.hiepsibaotap.com/wp-content/uploads/2018/11/Flash_HD.png" 
-                                style="width:40px;height:40px;"></div>
-                            <div class="buildItems5"><img src="https://www.hiepsibaotap.com/wp-content/uploads/2018/11/Flash_HD.png" 
-                                style="width:40px;height:40px;"></div>
-                            <div class="buildItems6"><img src="https://www.hiepsibaotap.com/wp-content/uploads/2018/11/Flash_HD.png" 
-                                style="width:40px;height:40px;"></div>
-                        </div>
-                    </div>
                     </button>
                     <div class="content">
                         <div class="skillorderRunes">
@@ -326,38 +645,54 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="mainContent">Between these two, there is a strange relationship. Companies collect and analyze this data, but rarely do readers get to see it.
+                        <div class="mainContent">Between these two, there is a strange relationship. Companies collect
+                            and analyze this data, but rarely do readers get to see it.
 
-                            New data from Amazon, released to The Atlantic, gives us a peek at what, specifically, readers connect with. These are the most popular highlights in some of the service’s most popular books.
-                            
-                            Amazon doesn’t release sales data for Kindles, so the question of what makes the list of most-popular highlights is somewhat interesting. It takes more than 4,000 highlights to make something the most popular passage in Pride and Prejudice, but only about 650 for something to be the most popular highlight in The Lion, the Witch, and the Wardrobe.
-                            
-                            Below, you’ll find passages from Austen, Tolkien, the Bible, and every tome of Harry Potter. (With some spoilers—though don’t worry, it’s not that section of Half-Blood Prince.)
-                            
-                            Are these your favorite passages too? Are they the most beautiful, the most poetic, or just, well, the most maudlin?
-                            
+                            New data from Amazon, released to The Atlantic, gives us a peek at what, specifically,
+                            readers connect with. These are the most popular highlights in some of the service’s most
+                            popular books.
+
+                            Amazon doesn’t release sales data for Kindles, so the question of what makes the list of
+                            most-popular highlights is somewhat interesting. It takes more than 4,000 highlights to make
+                            something the most popular passage in Pride and Prejudice, but only about 650 for something
+                            to be the most popular highlight in The Lion, the Witch, and the Wardrobe.
+
+                            Below, you’ll find passages from Austen, Tolkien, the Bible, and every tome of Harry Potter.
+                            (With some spoilers—though don’t worry, it’s not that section of Half-Blood Prince.)
+
+                            Are these your favorite passages too? Are they the most beautiful, the most poetic, or just,
+                            well, the most maudlin?
+
                             The most popular from Pride and Prejudice:
-                            
-                            It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.
-                            
+
+                            It is a truth universally acknowledged, that a single man in possession of a good fortune,
+                            must be in want of a wife.
+
                             The Lord of the Rings:
-                            
-                            The wide world is all about you: you can fence yourselves in, but you cannot for ever fence it out.
-                            
-                            From the Bible (specifically, the New International Version—the best-selling electronic version on Amazon):
-                            
-                            Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God. And the peace of God, which transcends all understanding, will guard your hearts and your minds in Christ Jesus.
-                            
+
+                            The wide world is all about you: you can fence yourselves in, but you cannot for ever fence
+                            it out.
+
+                            From the Bible (specifically, the New International Version—the best-selling electronic
+                            version on Amazon):
+
+                            Do not be anxious about anything, but in every situation, by prayer and petition, with
+                            thanksgiving, present your requests to God. And the peace of God, which transcends all
+                            understanding, will guard your hearts and your minds in Christ Jesus.
+
                             Little Women:
-                            
-                            There are many Beths in the world, shy and quiet, sitting in corners till needed, and living for others so cheerfully that no one sees the sacrifices till the little cricket on the hearth stops chirping, and the sweet, sunshiny presence vanishes, leaving silence and shadow behind.
-                            
+
+                            There are many Beths in the world, shy and quiet, sitting in corners till needed, and living
+                            for others so cheerfully that no one sees the sacrifices till the little cricket on the
+                            hearth stops chirping, and the sweet, sunshiny presence vanishes, leaving silence and shadow
+                            behind.
+
                             A Wrinkle In Time:
-                            
+
                             But of course we can’t take any credit for our talents. It’s how we use them that counts.
-                            
+
                             The Lion, the Witch, and the Wardrobe:
-                            
+
                             Wrong will be right,
                             when Aslan comes in sight,
                             At the sound of his roar,
@@ -373,4 +708,5 @@
     </div>
     <script src="collapse.js"></script>
 </body>
+
 </html>

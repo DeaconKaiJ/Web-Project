@@ -113,13 +113,13 @@
     height: 100px;
     width: 70%;
     border: 5px solid white;
-    min-width: 850px;
+    min-width: 870px;
 }
 .createButton{
     background-color: aqua;
     height: 100%;
     width: 100%;
-    min-width: 840px;
+    min-width: 860px;
     margin: auto;
     border: 1px solid white;
     border-bottom: 5px solid white;
@@ -153,7 +153,9 @@
     text-align: center;
 }
 .modal-body{
-    
+    margin:5px;
+    height: 80vh;
+    overflow-y: auto;
 }
 /* The Close Button */
 .close {
@@ -171,6 +173,85 @@
 .active, .createButton:hover {
     background-color: #555;
   }
+.topCreate{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 3px;
+}
+.createItems{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap:40px;
+}
+.first3{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.last3{
+    display: flex;
+    flex-direction: column ;
+    width: 50%;
+}
+.createSS{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.createRunes{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 40px;
+}
+.createMainRunes{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.createSubRunes{
+    display: flex;
+    flex-direction: column ;
+    width: 50%;
+}
+.createAddRunes{
+    display: flex;
+    flex-direction: column;
+}
+.createMaxSkills{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap:40px;
+}
+.first2{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.last2{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}   
+.createSkillOrder{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap:40px;
+}
+.first9{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.last9{
+    display: flex;
+    flex-direction: row ;
+    justify-content: space-around;
+}
 .uBuild{
     display: flex;
     flex-direction: column;
@@ -179,7 +260,7 @@
     height: auto;
     width: 70%;
     border: 5px solid white;
-    min-width: 850px;
+    min-width: 870px;
 }
 .champPicture{
     display: flex;
