@@ -1,15 +1,19 @@
-*,html{
-    margin:0;
-    padding:0;
+*,
+html {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
-.FlexBox-Container{
+
+.FlexBox-Container {
     display: flex;
     flex-direction: row;
 }
+
 .FlexAll {
     min-height: 100vh;
 }
+
 .Flex1 {
     position: fixed;
     width: 175px;
@@ -21,14 +25,16 @@
     overflow-x: hidden;
     overflow-y: scroll;
 }
-.pageTitle{
+
+.pageTitle {
     margin: 10px;
     padding: 10px;
     font-size: large;
     font-style: italic;
     font-weight: bold;
 }
-.pageTitle span{
+
+.pageTitle span {
     color: #d9d9d9;
 }
 
@@ -37,8 +43,9 @@
     width: 3px;
     background-color: #d9d9d9;
     border-radius: 10px;
-  }
-.NavButtons{
+}
+
+.NavButtons {
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -46,68 +53,106 @@
     border-top: 2px solid #d9d9d9;
     border-bottom: 2px solid #d9d9d9;
 }
-.NavBTN{
+
+.NavBTN {
     height: 40px;
 }
-.NavButtons .NavBTN a, a:link, a:focus, a:hover, a:visited{
+
+.NavButtons .NavBTN a,
+a:link,
+a:focus,
+a:hover,
+a:visited {
     color: #d9d9d9;
     font-weight: 500;
     text-decoration: none;
     outline: none;
 }
-.SearchBars{
+
+.SearchBars {
     display: flex;
     flex-direction: column;
     gap: 20px;
     margin-top: 10px;
     margin-left: 10px;
 }
-.sChamp{
+
+.sChamp {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 300px;
+}
+
+.sChamp span {
+    color: #d9d9d9;
+    font-size: large;
+    font-weight: bold;
+}
+
+.sChamp_txt {
+    width: 90%;
+    height: 35px;
+}
+
+.listOptions {
+    list-style: none;
+    display: none;
+    width: 90%;
+    height: 250px;
+    overflow-y: auto;
+    border: 1px solid black;
+}
+
+.listOptions li:hover {
+    background: white;
+}
+
+.sChampSearchBTN {
+    height: 40px;
+    width: 90%;
+}
+
+.sPlayer {
     display: flex;
     flex-direction: column;
 }
-.sChamp span{
+
+.sPlayer span {
     color: #d9d9d9;
     font-size: large;
-    font-weight:bold;
+    font-weight: bold;
 }
-.sChamp_txt{
-    width: 75%;
+
+.sPlayer_txt {
+    width: 90%;
     height: 35px;
 }
-.sPlayer{
-    display: flex;
-    flex-direction: column;
-}
-.sPlayer span{
-    color: #d9d9d9;
-    font-size: large;
-    font-weight:bold;
-}
-.sPlayer_txt{
-    width: 75%;
-    height: 35px;
-}
-.Legal{
+
+.Legal {
     margin-top: 250px;
 }
-.Legal span{
+
+.Legal span {
     font-weight: 500;
     color: #d9d9d9;
     font-size: 0.6em;
 }
-.Flex2{
+
+.Flex2 {
     margin-left: auto;
     background-color: black;
     width: calc(100% - 175px);
 }
-.userBuilds{
+
+.userBuilds {
     display: flex;
     flex-direction: column;
     border: 10px solid white;
     gap: 10px;
 }
-.createFilter{
+
+.createFilter {
     margin: auto;
     background-color: aqua;
     height: 100px;
@@ -115,7 +160,8 @@
     border: 5px solid white;
     min-width: 870px;
 }
-.createButton{
+
+.createButton {
     background-color: aqua;
     height: 100%;
     width: 100%;
@@ -124,39 +170,52 @@
     border: 1px solid white;
     border-bottom: 5px solid white;
 }
+
 /* The Modal (background) */
 .modal {
-    display:block; /* Hidden by default */
-    position:absolute; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none;
+    /* Hidden by default */
+    position: absolute;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}  
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
 /* Modal Content */
 .modal-content {
-    margin:auto;
+    margin: auto;
     margin-top: 20px;
     background-color: #fefefe;
     border: 1px solid #888;
     width: 40%;
     height: 700px;
 }
-.modal-header{
+
+.modal-header {
     background-color: hotpink;
     height: 50px;
     font-size: 40px;
     text-align: center;
 }
-.modal-body{
-    margin:5px;
+
+.modal-body {
+    margin: 5px;
     height: 80vh;
     overflow-y: auto;
 }
+
 /* The Close Button */
 .close {
     color: #aaaaaa;
@@ -164,200 +223,317 @@
     font-size: 28px;
     font-weight: bold;
 }
+
 .close:hover,
 .close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
 }
-.active, .createButton:hover {
+
+/* The Modal (background) */
+.modalChamp {
+    display: none;
+    /* Hidden by default */
+    position: absolute;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-contentChamp {
+    margin: auto;
+    margin-top: 20px;
+    background-color: #fefefe;
+    border: 1px solid #888;
+    width: 100%;
+    height: 700px;
+}
+
+.modal-headerChamp {
+    background-color: hotpink;
+    height: auto;
+    font-size: 35px;
+    text-align: center;
+}
+
+.modal-bodyChamp {
+    margin: 5px;
+    height: 80vh;
+    overflow-y: auto;
+}
+
+/* The Close Button */
+.closeChamp {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.closeChamp:hover,
+.closeChamp:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.active,
+.createButton:hover {
     background-color: #555;
-  }
-.topCreate{
+}
+
+.champStats{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+.dmgStats{
+    display: flex;
+    flex-direction: column;
+}
+.otherStats{
+    display: flex;
+    flex-direction: column;
+}
+
+.topCreate {
     display: flex;
     flex-direction: column;
     width: 100%;
     gap: 3px;
 }
-.createItems{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    gap:40px;
-}
-.first3{
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-}
-.last3{
-    display: flex;
-    flex-direction: column ;
-    width: 50%;
-}
-.createSS{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-.createRunes{
+
+.createItems {
     display: flex;
     flex-direction: row;
     width: 100%;
     gap: 40px;
 }
-.createMainRunes{
+
+.first3 {
     display: flex;
     flex-direction: column;
     width: 50%;
 }
-.createSubRunes{
-    display: flex;
-    flex-direction: column ;
-    width: 50%;
-}
-.createAddRunes{
+
+.last3 {
     display: flex;
     flex-direction: column;
+    width: 50%;
 }
-.createMaxSkills{
+
+.createSS {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.createRunes {
     display: flex;
     flex-direction: row;
     width: 100%;
-    gap:40px;
+    gap: 40px;
 }
-.first2{
+
+.createMainRunes {
     display: flex;
     flex-direction: column;
     width: 50%;
 }
-.last2{
+
+.createSubRunes {
     display: flex;
     flex-direction: column;
     width: 50%;
-}   
-.createSkillOrder{
+}
+
+.createAddRunes {
+    display: flex;
+    flex-direction: column;
+}
+
+.createMaxSkills {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 40px;
+}
+
+.first2 {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.last2 {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.createSkillOrder {
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap:40px;
+    gap: 40px;
 }
-.first9{
+
+.first9 {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
-.last9{
+
+.last9 {
     display: flex;
-    flex-direction: row ;
+    flex-direction: row;
     justify-content: space-around;
 }
-.uBuild{
+
+.uBuild {
     display: flex;
     flex-direction: column;
     background-color: aqua;
-    margin:auto;
+    margin: auto;
     height: auto;
     width: 70%;
     border: 5px solid white;
     min-width: 870px;
 }
-.champPicture{
+
+.champPicture {
     display: flex;
     width: 100px;
     flex: 0 0 100px;
 }
-.champNameSkillOrder{
+
+.champNameSkillOrder {
     display: flex;
     flex-direction: column;
     flex: 0 0 280px;
     width: 280px;
-    gap:4px;
+    gap: 4px;
 }
-.champName{
+
+.champName {
     font-size: 40px;
 }
-.champSkillOrder{
+
+.champSkillOrder {
     display: flex;
     flex-direction: row;
-    margin:auto;
+    margin: auto;
     font-size: 25px;
     gap: 8px;
 }
-.skills{
+
+.skills {
     border: 3px solid black;
 }
-.champRS{
+
+.champRS {
     display: flex;
     flex-direction: row;
     flex: 0 0 100px;
-    gap:10px;
+    gap: 10px;
     margin: auto;
 }
-.champRunes{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    
-}
-.champSS{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    
-}
-.titleItems{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin: auto;
-}
-.buildTitle{
-    font-size: 25px;
-}
-.buildItems{
-    display: flex;
-    gap: 10px;
-}
-.collapsible{
-    display: flex;
-}
-.active, .collapsible:hover {
-    background-color: #555;
-  }
-.content {
-    display: none;
-    overflow: hidden;
-    background-color: #f1f1f1;
-}
-.skillorderRunes{
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-.runes{
+
+.champRunes {
     display: flex;
     flex-direction: column;
     gap: 5px;
 
 }
-.runes span{
+
+.champSS {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+}
+
+.titleItems {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: auto;
+}
+
+.buildTitle {
+    font-size: 25px;
+}
+
+.buildItems {
+    display: flex;
+    gap: 10px;
+}
+
+.collapsible {
+    display: flex;
+}
+
+.active,
+.collapsible:hover {
+    background-color: #555;
+}
+
+.content {
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+.skillorderRunes {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.runes {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+}
+
+.runes span {
     font-weight: bold;
 }
-.MainRunes{
+
+.MainRunes {
     display: flex;
     flex-direction: row;
     gap: 8px;
 }
-.SupportRunes{
+
+.SupportRunes {
     display: flex;
     gap: 8px;
 }
-.RuneAttributes{
+
+.RuneAttributes {
     display: flex;
     gap: 8px;
 }
-table, th, td {
-    border:1px solid black;
-  }
+
+table,
+th,
+td {
+    border: 1px solid black;
+}

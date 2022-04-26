@@ -17,13 +17,6 @@ fetch("http://ddragon.leagueoflegends.com/cdn/12.7.1/data/en_US/runesReforged.js
     .then(res => res.json())
     .then(data => {
         for (var key in data) {
-            console.log(data)
-        }
-})
-fetch("http://ddragon.leagueoflegends.com/cdn/12.7.1/data/en_US/runesReforged.json")
-    .then(res => res.json())
-    .then(data => {
-        for (var key in data) {
             mainKeystone.innerHTML = mainKeystone.innerHTML +
                 "<option value='" + data[key].key + "'>" + data[key].key + "</option>";
             subKeystone.innerHTML = subKeystone.innerHTML +
