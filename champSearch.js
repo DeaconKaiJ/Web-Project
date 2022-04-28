@@ -1,5 +1,7 @@
 var champSearch = document.getElementById('sChamp_txt');
 var listOptions = document.getElementById('listOptions');
+var champImg = document.getElementById('modalImg');
+
 fetch("http://ddragon.leagueoflegends.com/cdn/12.7.1/data/en_US/champion.json")
     .then(res => res.json())
     .then(data => data.data)
@@ -56,7 +58,12 @@ searchButton.onclick = async function () {
     searchValue = searchValue.replace('.', '')
     searchValue = searchValue.replace("'", '');
     modalChamp.style.display = "block";
-    champLink = "http://ddragon.leagueoflegends.com/cdn/12.7.1/data/en_US/champion/" + searchValue + ".json"
+    champLink = "http://ddragon.leagueoflegends.com/cdn/12.8.1/data/en_US/champion/" + searchValue + ".json"
+    imgLink = "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/"+searchValue+"_0.jpg"
+    imgHeight = "700px"
+    imgWidth = "auto"
+    champImg.innerHTML =  "<img src='" + imgLink + "'" + " " + "height='" + imgHeight + "'" + " " + "width='" + imgWidth + "'>";
+    champImg.style.display ="block";
     fetch(champLink)
         .then(res => res.json())
         .then(data => data.data)
@@ -110,9 +117,11 @@ searchButton.onclick = async function () {
 }
 spanChamp.onclick = function () {
     modalChamp.style.display = "none";
+    champImg.style.display = "none"
 }
 window.onclick = function (event) {
     if (event.target == modalChamp) {
         modalChamp.style.display = "none";
+        champImg.style.display = "none"
     }
 }
