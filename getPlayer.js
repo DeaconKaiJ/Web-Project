@@ -14,6 +14,10 @@ const historyTemplate = document.querySelector("[playerSearch]");
 const historyContainer = document.querySelector("[playerSearchContainer]");
 
 searchBtn.addEventListener("click", function () {
+    while (historyContainer.hasChildNodes()) {
+        historyContainer.removeChild(historyContainer.firstChild);
+    }
+    
     playerName = inputName.value;
     champPlayer.textContent = playerName;
     const link = "https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + playerName + "?api_key=" + apiKey;
@@ -26,16 +30,19 @@ searchBtn.addEventListener("click", function () {
             fetch(matchIDlink)
                 .then(res2 => res2.json())
                 .then(data2 => {
+                    console.log(data2)
                     for (i = 0; i < 5; i++) {
                         matchLink = "https://europe.api.riotgames.com/lol/match/v5/matches/" + data2[i] + "?api_key=" + apiKey;
+                        console.log(matchLink);
+                        console.log(data2[i]);
                         fetch(matchLink)
                             .then(res3 => res3.json())
                             .then(data3 => {
-                                console.log(data3.info.participants);
+                                console.log(data3)
                                 userLength = data3.info.participants.length;
-                                for (i = 0; i < userLength; i++) {
-                                    if (data3.info.participants[i].puuid == userPuuid) {
-                                        imgimg = "http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/" + data3.info.participants[i].championName + ".png"
+                                for (j = 0; j < userLength; j++) {
+                                    if (data3.info.participants[j].puuid == userPuuid) {
+                                        imgimg = "http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/" + data3.info.participants[j].championName + ".png"
                                         imgimgheight = "100px";
                                         imgimgwidth = "auto";
                                         const currentHist = historyTemplate.content.cloneNode(true).children[0];
@@ -46,18 +53,16 @@ searchBtn.addEventListener("click", function () {
                                         const playerAssists = currentHist.querySelector("[playerAssistsSearched]")
                                         const playerImgKDA = currentHist.querySelector("[playerKDASearched]")
                                         playerImg.innerHTML = "<img src='" + imgimg + "'" + " " + "height='" + imgimgheight + "'" + " " + "width='" + imgimgwidth + "'>";
-                                        playerNameS.textContent = data3.info.participants[i].championName;
-                                        playerKills.textContent = data3.info.participants[i].kills;
-                                        playerDeaths.textContent = data3.info.participants[i].deaths;
-                                        playerAssists.textContent = data3.info.participants[i].assists;
-                                        KDA = (data3.info.participants[i].kills + data3.info.participants[i].assists) / data3.info.participants[i].deaths;
+                                        champName= data3.info.participants[j].championName;
+                                        if(champName == "MonkeyKing"){champName = "Wukong"};
+                                        playerNameS.textContent = champName;
+                                        playerKills.textContent = data3.info.participants[j].kills;
+                                        playerDeaths.textContent = data3.info.participants[j].deaths;
+                                        playerAssists.textContent = data3.info.participants[j].assists;
+                                        KDA = (data3.info.participants[j].kills + data3.info.participants[j].assists) / data3.info.participants[j].deaths;
+                                        KDA = KDA.toFixed(2);
                                         playerImgKDA.textContent = "KDA: " + KDA;
                                         historyContainer.append(currentHist)
-                                        console.log(data3.info.participants[i]);
-                                        console.log(data3.info.participants[i].championName)
-                                        console.log(data3.info.participants[i].assists)
-                                        console.log(data3.info.participants[i].kills)
-                                        console.log(data3.info.participants[i].deaths)
                                     }
                                 }
                             })

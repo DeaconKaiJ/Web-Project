@@ -1,6 +1,6 @@
 var champs = document.getElementById('champs');
 var searchChamps = document.getElementById('sChamp_txt')
-fetch("http://ddragon.leagueoflegends.com/cdn/12.7.1/data/en_US/champion.json")
+fetch("http://ddragon.leagueoflegends.com/cdn/12.8.1/data/en_US/champion.json")
     .then(res => res.json())
     .then(data => data.data)
     .then(data =>{

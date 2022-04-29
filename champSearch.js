@@ -2,7 +2,7 @@ var champSearch = document.getElementById('sChamp_txt');
 var listOptions = document.getElementById('listOptions');
 var champImg = document.getElementById('modalImg');
 
-fetch("http://ddragon.leagueoflegends.com/cdn/12.7.1/data/en_US/champion.json")
+fetch("http://ddragon.leagueoflegends.com/cdn/12.8.1/data/en_US/champion.json")
     .then(res => res.json())
     .then(data => data.data)
     .then(data => {
@@ -53,10 +53,23 @@ let Support = ["Chemtech Putrifier", "Ardent Censer", "Redemption"]
 searchButton.onclick = async function () {
     searchValue = champSearch.value;
     champHeader.textContent = searchValue;
-    if (searchValue == "Nunu & Willump") { searchValue = "nunu"; }
+    if (searchValue == "Nunu & Willump") { searchValue = "Nunu"; }
+    if (searchValue == "Renata Glasc") { searchValue = "Renata"; }
     searchValue = searchValue.replace(/\s+/g, '');
     searchValue = searchValue.replace('.', '')
     searchValue = searchValue.replace("'", '');
+    searchValue = searchValue.toLowerCase();
+    searchValue = searchValue.charAt(0).toUpperCase() + searchValue.slice(1);
+    if (searchValue == "Jarvaniv"){searchValue ="JarvanIV";}
+    if (searchValue == "Kogmaw"){searchValue ="KogMaw";}
+    if (searchValue == "Leesin"){searchValue ="LeeSin";}
+    if (searchValue == "Drmundo"){searchValue ="DrMundo";}
+    if(searchValue == "Aurelionsol"){searchValue ="AurelionSol";}
+    if(searchValue == "Masteryi"){searchValue ="MasterYi";}
+    if(searchValue == "Reksai"){searchValue ="RekSai";}   
+    if(searchValue == "Tahmkench"){searchValue ="TahmKench";}
+    if(searchValue == "Twistedfate"){searchValue ="TwistedFate";}
+    if(searchValue == "Xinzhao"){searchValue ="XinZhao";}
     modalChamp.style.display = "block";
     champLink = "http://ddragon.leagueoflegends.com/cdn/12.8.1/data/en_US/champion/" + searchValue + ".json"
     imgLink = "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/"+searchValue+"_0.jpg"
@@ -69,7 +82,7 @@ searchButton.onclick = async function () {
         .then(data => data.data)
         .then(data => {
             for (var key in data)
-                console.log(data[key].tags[0])
+
             AD.textContent = "AD:" + data[key].stats.attackdamage
             AS.textContent = "AS:" + data[key].stats.attackspeed
             AR.textContent = "AR:" + data[key].stats.attackrange
@@ -78,11 +91,26 @@ searchButton.onclick = async function () {
             ARM.textContent = "ARM:" + data[key].stats.armor
             MR.textContent = "MR:" + data[key].stats.spellblock
             MN.textContent = "MN:" + data[key].stats.mp
-            passive.textContent = "Passive: " + data[key].passive.name + " " + data[key].passive.description
-            qab.textContent = "Q: " + data[key].spells[0].name + " " + data[key].spells[0].description
-            wab.textContent = "W: " + data[key].spells[1].name + " " + data[key].spells[1].description
-            eab.textContent = "E: " + data[key].spells[2].name + " " + data[key].spells[2].description
-            rab.textContent = "R: " + data[key].spells[3].name + " " + data[key].spells[3].description
+            passiveDesc = data[key].passive.description
+            passiveDesc = passiveDesc.replaceAll("<br>", " ")
+            passiveDesc = passiveDesc.replaceAll("<br><br>", " ")
+            passive.textContent = "Passive: " + data[key].passive.name + ": " + passiveDesc
+            qDesc = data[key].spells[0].description
+            qDesc = qDesc.replaceAll("<br>", " ")
+            qDesc = qDesc.replaceAll("<br><br>", " ")
+            qab.textContent = "Q: " + data[key].spells[0].name + ": " + qDesc
+            wDesc = data[key].spells[1].description
+            wDesc = wDesc.replaceAll("<br>", " ")
+            wDesc = wDesc.replaceAll("<br><br>", " ")
+            wab.textContent = "W: " + data[key].spells[1].name + ": " + wDesc
+            eDesc = data[key].spells[2].description
+            eDesc = eDesc.replaceAll("<br>", " ")
+            eDesc = eDesc.replaceAll("<br><br>", " ")
+            eab.textContent = "E: " + data[key].spells[2].name + ": " + eDesc
+            rDesc = data[key].spells[3].description
+            rDesc = rDesc.replaceAll("<br>", " ")
+            rDesc = rDesc.replaceAll("<br><br>", " ")
+            rab.textContent = "R: " + data[key].spells[3].name + ": " + rDesc
             if (data[key].tags[0] == "Fighter") {
                 r1.textContent = Fighter[0]
                 r2.textContent = Fighter[1]

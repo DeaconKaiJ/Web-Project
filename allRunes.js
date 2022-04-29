@@ -13,44 +13,44 @@ var subRune2 = document.getElementById('subRune2')
 var addRune1 = document.getElementById('addRune1')
 var addRune2 = document.getElementById('addRune2')
 var addRune3 = document.getElementById('addRune3')
-fetch("http://ddragon.leagueoflegends.com/cdn/12.7.1/data/en_US/runesReforged.json")
+fetch("http://ddragon.leagueoflegends.com/cdn/12.8.1/data/en_US/runesReforged.json")
     .then(res => res.json())
     .then(data => {
         for (var key in data) {
             mainKeystone.innerHTML = mainKeystone.innerHTML +
-                "<option value='" + data[key].key + "'>" + data[key].key + "</option>";
+                "<option value='" + data[key].icon + "'>" + data[key].key + "</option>";
             subKeystone.innerHTML = subKeystone.innerHTML +
-                "<option value='" + data[key].key + "'>" + data[key].key + "</option>";
+                "<option value='" + data[key].icon + "'>" + data[key].key + "</option>";
         }
         for (let i = 0; i < 4; i++) {
             mainRune.innerHTML = mainRune.innerHTML +
-                "<option value='" + data[0].slots[0].runes[i].key + "'>" + data[0].slots[0].runes[i].key + "</option>";
+                "<option value='" + data[0].slots[0].runes[i].icon + "'>" + data[0].slots[0].runes[i].key + "</option>";
             mainRune3.innerHTML = mainRune3.innerHTML +
-                "<option value='" + data[0].slots[3].runes[i].key + "'>" + data[0].slots[3].runes[i].key + "</option>";
+                "<option value='" + data[0].slots[3].runes[i].icon + "'>" + data[0].slots[3].runes[i].key + "</option>";
         }
         for (let i = 0; i < 3; i++) {
 
             mainRune1.innerHTML = mainRune1.innerHTML +
-                "<option value='" + data[0].slots[1].runes[i].key + "'>" + data[0].slots[1].runes[i].key + "</option>";
+                "<option value='" + data[0].slots[1].runes[i].icon + "'>" + data[0].slots[1].runes[i].key + "</option>";
             mainRune2.innerHTML = mainRune2.innerHTML +
-                "<option value='" + data[0].slots[2].runes[i].key + "'>" + data[0].slots[2].runes[i].key + "</option>";
+                "<option value='" + data[0].slots[2].runes[i].icon + "'>" + data[0].slots[2].runes[i].key + "</option>";
         }
         for (let i = 0; i < 4; i++) {
             subRune1.innerHTML = subRune1.innerHTML +
-                "<option value='" + data[0].slots[3].runes[i].key + "'>" + data[0].slots[3].runes[i].key + "</option>";
+                "<option value='" + data[0].slots[3].runes[i].icon + "'>" + data[0].slots[3].runes[i].key + "</option>";
             subRune2.innerHTML = subRune2.innerHTML +
-                "<option value='" + data[0].slots[3].runes[i].key + "'>" + data[0].slots[3].runes[i].key + "</option>";
+                "<option value='" + data[0].slots[3].runes[i].icon + "'>" + data[0].slots[3].runes[i].key + "</option>";
         }
         for (let i = 0; i < 3; i++) {
 
             subRune1.innerHTML = subRune1.innerHTML +
-                "<option value='" + data[0].slots[2].runes[i].key + "'>" + data[0].slots[2].runes[i].key + "</option>";
+                "<option value='" + data[0].slots[2].runes[i].icon + "'>" + data[0].slots[2].runes[i].key + "</option>";
             subRune2.innerHTML = subRune2.innerHTML +
-                "<option value='" + data[0].slots[2].runes[i].key + "'>" + data[0].slots[2].runes[i].key + "</option>";
+                "<option value='" + data[0].slots[2].runes[i].icon + "'>" + data[0].slots[2].runes[i].key + "</option>";
             subRune1.innerHTML = subRune1.innerHTML +
-                "<option value='" + data[0].slots[1].runes[i].key + "'>" + data[0].slots[1].runes[i].key + "</option>";
+                "<option value='" + data[0].slots[1].runes[i].icon + "'>" + data[0].slots[1].runes[i].key + "</option>";
             subRune2.innerHTML = subRune2.innerHTML +
-                "<option value='" + data[0].slots[1].runes[i].key + "'>" + data[0].slots[1].runes[i].key + "</option>";
+                "<option value='" + data[0].slots[1].runes[i].icon + "'>" + data[0].slots[1].runes[i].key + "</option>";
         }
     })
 
@@ -69,87 +69,87 @@ mainKeystone.onchange = function () {
     }
     switch (mainKeystone.value) {
         case 'Domination':
-            fetch("http://ddragon.leagueoflegends.com/cdn/12.7.1/data/en_US/runesReforged.json")
+            fetch("http://ddragon.leagueoflegends.com/cdn/12.8.1/data/en_US/runesReforged.json")
                 .then(res => res.json())
                 .then(data => {
                     for (let i = 0; i < 4; i++) {
                         mainRune.innerHTML = mainRune.innerHTML +
-                            "<option value='" + data[0].slots[0].runes[i].key + "'>" + data[0].slots[0].runes[i].key + "</option>";
+                            "<option value='" + data[0].slots[0].runes[i].icon + "'>" + data[0].slots[0].runes[i].key + "</option>";
                         mainRune3.innerHTML = mainRune3.innerHTML +
-                            "<option value='" + data[0].slots[3].runes[i].key + "'>" + data[0].slots[3].runes[i].key + "</option>";
+                            "<option value='" + data[0].slots[3].runes[i].icon + "'>" + data[0].slots[3].runes[i].key + "</option>";
                     }
                     for (let i = 0; i < 3; i++) {
 
                         mainRune1.innerHTML = mainRune1.innerHTML +
-                            "<option value='" + data[0].slots[1].runes[i].key + "'>" + data[0].slots[1].runes[i].key + "</option>";
+                            "<option value='" + data[0].slots[1].runes[i].icon + "'>" + data[0].slots[1].runes[i].key + "</option>";
                         mainRune2.innerHTML = mainRune2.innerHTML +
-                            "<option value='" + data[0].slots[2].runes[i].key + "'>" + data[0].slots[2].runes[i].key + "</option>";
+                            "<option value='" + data[0].slots[2].runes[i].icon + "'>" + data[0].slots[2].runes[i].key + "</option>";
                     }
                 })
             break;
         case 'Inspiration':
-            fetch("http://ddragon.leagueoflegends.com/cdn/12.7.1/data/en_US/runesReforged.json")
+            fetch("http://ddragon.leagueoflegends.com/cdn/12.8.1/data/en_US/runesReforged.json")
                 .then(res => res.json())
                 .then(data => {
                     for (let i = 0; i < 3; i++) {
                         mainRune.innerHTML = mainRune.innerHTML +
-                            "<option value='" + data[1].slots[0].runes[i].key + "'>" + data[1].slots[0].runes[i].key + "</option>";
+                            "<option value='" + data[1].slots[0].runes[i].icon + "'>" + data[1].slots[0].runes[i].key + "</option>";
                         mainRune3.innerHTML = mainRune3.innerHTML +
-                            "<option value='" + data[1].slots[3].runes[i].key + "'>" + data[1].slots[3].runes[i].key + "</option>";
+                            "<option value='" + data[1].slots[3].runes[i].icon + "'>" + data[1].slots[3].runes[i].key + "</option>";
                         mainRune1.innerHTML = mainRune1.innerHTML +
-                            "<option value='" + data[1].slots[1].runes[i].key + "'>" + data[1].slots[1].runes[i].key + "</option>";
+                            "<option value='" + data[1].slots[1].runes[i].icon + "'>" + data[1].slots[1].runes[i].key + "</option>";
                         mainRune2.innerHTML = mainRune2.innerHTML +
-                            "<option value='" + data[1].slots[2].runes[i].key + "'>" + data[1].slots[2].runes[i].key + "</option>";
+                            "<option value='" + data[1].slots[2].runes[i].icon + "'>" + data[1].slots[2].runes[i].key + "</option>";
                     }
                 })
             break;
         case 'Precision':
-            fetch("http://ddragon.leagueoflegends.com/cdn/12.7.1/data/en_US/runesReforged.json")
+            fetch("http://ddragon.leagueoflegends.com/cdn/12.8.1/data/en_US/runesReforged.json")
                 .then(res => res.json())
                 .then(data => {
                     for (let i = 0; i < 4; i++) {
                         mainRune.innerHTML = mainRune.innerHTML +
-                            "<option value='" + data[2].slots[0].runes[i].key + "'>" + data[2].slots[0].runes[i].key + "</option>";
+                            "<option value='" + data[2].slots[0].runes[i].icon + "'>" + data[2].slots[0].runes[i].key + "</option>";
                     }
                     for (let i = 0; i < 3; i++) {
                         mainRune3.innerHTML = mainRune3.innerHTML +
-                            "<option value='" + data[2].slots[3].runes[i].key + "'>" + data[2].slots[3].runes[i].key + "</option>";
+                            "<option value='" + data[2].slots[3].runes[i].icon + "'>" + data[2].slots[3].runes[i].key + "</option>";
                         mainRune1.innerHTML = mainRune1.innerHTML +
-                            "<option value='" + data[2].slots[1].runes[i].key + "'>" + data[2].slots[1].runes[i].key + "</option>";
+                            "<option value='" + data[2].slots[1].runes[i].icon + "'>" + data[2].slots[1].runes[i].key + "</option>";
                         mainRune2.innerHTML = mainRune2.innerHTML +
-                            "<option value='" + data[2].slots[2].runes[i].key + "'>" + data[2].slots[2].runes[i].key + "</option>";
+                            "<option value='" + data[2].slots[2].runes[i].icon + "'>" + data[2].slots[2].runes[i].key + "</option>";
                     }
                 })
             break;
         case 'Resolve':
-            fetch("http://ddragon.leagueoflegends.com/cdn/12.7.1/data/en_US/runesReforged.json")
+            fetch("http://ddragon.leagueoflegends.com/cdn/12.8.1/data/en_US/runesReforged.json")
                 .then(res => res.json())
                 .then(data => {
                     for (let i = 0; i < 3; i++) {
                         mainRune.innerHTML = mainRune.innerHTML +
-                            "<option value='" + data[3].slots[0].runes[i].key + "'>" + data[3].slots[0].runes[i].key + "</option>";
+                            "<option value='" + data[3].slots[0].runes[i].icon + "'>" + data[3].slots[0].runes[i].key + "</option>";
                         mainRune3.innerHTML = mainRune3.innerHTML +
-                            "<option value='" + data[3].slots[3].runes[i].key + "'>" + data[3].slots[3].runes[i].key + "</option>";
+                            "<option value='" + data[3].slots[3].runes[i].icon + "'>" + data[3].slots[3].runes[i].key + "</option>";
                         mainRune1.innerHTML = mainRune1.innerHTML +
-                            "<option value='" + data[3].slots[1].runes[i].key + "'>" + data[3].slots[1].runes[i].key + "</option>";
+                            "<option value='" + data[3].slots[1].runes[i].icon + "'>" + data[3].slots[1].runes[i].key + "</option>";
                         mainRune2.innerHTML = mainRune2.innerHTML +
-                            "<option value='" + data[3].slots[2].runes[i].key + "'>" + data[3].slots[2].runes[i].key + "</option>";
+                            "<option value='" + data[3].slots[2].runes[i].icon + "'>" + data[3].slots[2].runes[i].key + "</option>";
                     }
                 })
             break;
         case 'Sorcery':
-            fetch("http://ddragon.leagueoflegends.com/cdn/12.7.1/data/en_US/runesReforged.json")
+            fetch("http://ddragon.leagueoflegends.com/cdn/12.8.1/data/en_US/runesReforged.json")
                 .then(res => res.json())
                 .then(data => {
                     for (let i = 0; i < 3; i++) {
                         mainRune.innerHTML = mainRune.innerHTML +
-                            "<option value='" + data[4].slots[0].runes[i].key + "'>" + data[4].slots[0].runes[i].key + "</option>";
+                            "<option value='" + data[4].slots[0].runes[i].icon + "'>" + data[4].slots[0].runes[i].key + "</option>";
                         mainRune3.innerHTML = mainRune3.innerHTML +
-                            "<option value='" + data[4].slots[3].runes[i].key + "'>" + data[4].slots[3].runes[i].key + "</option>";
+                            "<option value='" + data[4].slots[3].runes[i].icon + "'>" + data[4].slots[3].runes[i].key + "</option>";
                         mainRune1.innerHTML = mainRune1.innerHTML +
-                            "<option value='" + data[4].slots[1].runes[i].key + "'>" + data[4].slots[1].runes[i].key + "</option>";
+                            "<option value='" + data[4].slots[1].runes[i].icon + "'>" + data[4].slots[1].runes[i].key + "</option>";
                         mainRune2.innerHTML = mainRune2.innerHTML +
-                            "<option value='" + data[4].slots[2].runes[i].key + "'>" + data[4].slots[2].runes[i].key + "</option>";
+                            "<option value='" + data[4].slots[2].runes[i].icon + "'>" + data[4].slots[2].runes[i].key + "</option>";
                     }
                 })
             break;
@@ -165,105 +165,105 @@ subKeystone.onchange = function () {
     }
     switch (subKeystone.value) {
         case 'Domination':
-            fetch("http://ddragon.leagueoflegends.com/cdn/12.7.1/data/en_US/runesReforged.json")
+            fetch("http://ddragon.leagueoflegends.com/cdn/12.8.1/data/en_US/runesReforged.json")
                 .then(res => res.json())
                 .then(data => {
                     for (let i = 0; i < 4; i++) {
                         subRune1.innerHTML = subRune1.innerHTML +
-                            "<option value='" + data[0].slots[3].runes[i].key + "'>" + data[0].slots[3].runes[i].key + "</option>";
+                            "<option value='" + data[0].slots[3].runes[i].icon + "'>" + data[0].slots[3].runes[i].key + "</option>";
                         subRune2.innerHTML = subRune2.innerHTML +
-                            "<option value='" + data[0].slots[3].runes[i].key + "'>" + data[0].slots[3].runes[i].key + "</option>";
+                            "<option value='" + data[0].slots[3].runes[i].icon + "'>" + data[0].slots[3].runes[i].key + "</option>";
                     }
                     for (let i = 0; i < 3; i++) {
 
                         subRune1.innerHTML = subRune1.innerHTML +
-                            "<option value='" + data[0].slots[2].runes[i].key + "'>" + data[0].slots[2].runes[i].key + "</option>";
+                            "<option value='" + data[0].slots[2].runes[i].icon + "'>" + data[0].slots[2].runes[i].key + "</option>";
                         subRune2.innerHTML = subRune2.innerHTML +
-                            "<option value='" + data[0].slots[2].runes[i].key + "'>" + data[0].slots[2].runes[i].key + "</option>";
+                            "<option value='" + data[0].slots[2].runes[i].icon + "'>" + data[0].slots[2].runes[i].key + "</option>";
                         subRune1.innerHTML = subRune1.innerHTML +
-                            "<option value='" + data[0].slots[1].runes[i].key + "'>" + data[0].slots[1].runes[i].key + "</option>";
+                            "<option value='" + data[0].slots[1].runes[i].icon + "'>" + data[0].slots[1].runes[i].key + "</option>";
                         subRune2.innerHTML = subRune2.innerHTML +
-                            "<option value='" + data[0].slots[1].runes[i].key + "'>" + data[0].slots[1].runes[i].key + "</option>";
+                            "<option value='" + data[0].slots[1].runes[i].icon + "'>" + data[0].slots[1].runes[i].key + "</option>";
                     }
                 })
             break;
         case 'Inspiration':
-            fetch("http://ddragon.leagueoflegends.com/cdn/12.7.1/data/en_US/runesReforged.json")
+            fetch("http://ddragon.leagueoflegends.com/cdn/12.8.1/data/en_US/runesReforged.json")
                 .then(res => res.json())
                 .then(data => {
                     for (let i = 0; i < 3; i++) {
                         subRune1.innerHTML = subRune1.innerHTML +
-                            "<option value='" + data[1].slots[3].runes[i].key + "'>" + data[1].slots[3].runes[i].key + "</option>";
+                            "<option value='" + data[1].slots[3].runes[i].icon + "'>" + data[1].slots[3].runes[i].key + "</option>";
                         subRune2.innerHTML = subRune2.innerHTML +
-                            "<option value='" + data[1].slots[3].runes[i].key + "'>" + data[1].slots[3].runes[i].key + "</option>";
+                            "<option value='" + data[1].slots[3].runes[i].icon + "'>" + data[1].slots[3].runes[i].key + "</option>";
                         subRune1.innerHTML = subRune1.innerHTML +
-                            "<option value='" + data[1].slots[2].runes[i].key + "'>" + data[1].slots[2].runes[i].key + "</option>";
+                            "<option value='" + data[1].slots[2].runes[i].icon + "'>" + data[1].slots[2].runes[i].key + "</option>";
                         subRune2.innerHTML = subRune2.innerHTML +
-                            "<option value='" + data[1].slots[2].runes[i].key + "'>" + data[1].slots[2].runes[i].key + "</option>";
+                            "<option value='" + data[1].slots[2].runes[i].icon + "'>" + data[1].slots[2].runes[i].key + "</option>";
                         subRune1.innerHTML = subRune1.innerHTML +
-                            "<option value='" + data[1].slots[1].runes[i].key + "'>" + data[1].slots[1].runes[i].key + "</option>";
+                            "<option value='" + data[1].slots[1].runes[i].icon + "'>" + data[1].slots[1].runes[i].key + "</option>";
                         subRune2.innerHTML = subRune2.innerHTML +
-                            "<option value='" + data[1].slots[1].runes[i].key + "'>" + data[1].slots[1].runes[i].key + "</option>";
+                            "<option value='" + data[1].slots[1].runes[i].icon + "'>" + data[1].slots[1].runes[i].key + "</option>";
                     }
                 })
             break;
         case 'Precision':
-            fetch("http://ddragon.leagueoflegends.com/cdn/12.7.1/data/en_US/runesReforged.json")
+            fetch("http://ddragon.leagueoflegends.com/cdn/12.8.1/data/en_US/runesReforged.json")
                 .then(res => res.json())
                 .then(data => {
                     for (let i = 0; i < 3; i++) {
                         subRune1.innerHTML = subRune1.innerHTML +
-                            "<option value='" + data[2].slots[3].runes[i].key + "'>" + data[2].slots[3].runes[i].key + "</option>";
+                            "<option value='" + data[2].slots[3].runes[i].icon + "'>" + data[2].slots[3].runes[i].key + "</option>";
                         subRune2.innerHTML = subRune2.innerHTML +
-                            "<option value='" + data[2].slots[3].runes[i].key + "'>" + data[2].slots[3].runes[i].key + "</option>";
+                            "<option value='" + data[2].slots[3].runes[i].icon + "'>" + data[2].slots[3].runes[i].key + "</option>";
                         subRune1.innerHTML = subRune1.innerHTML +
-                            "<option value='" + data[2].slots[2].runes[i].key + "'>" + data[2].slots[2].runes[i].key + "</option>";
+                            "<option value='" + data[2].slots[2].runes[i].icon + "'>" + data[2].slots[2].runes[i].key + "</option>";
                         subRune2.innerHTML = subRune2.innerHTML +
-                            "<option value='" + data[2].slots[2].runes[i].key + "'>" + data[2].slots[2].runes[i].key + "</option>";
+                            "<option value='" + data[2].slots[2].runes[i].icon + "'>" + data[2].slots[2].runes[i].key + "</option>";
                         subRune1.innerHTML = subRune1.innerHTML +
-                            "<option value='" + data[2].slots[1].runes[i].key + "'>" + data[2].slots[1].runes[i].key + "</option>";
+                            "<option value='" + data[2].slots[1].runes[i].icon + "'>" + data[2].slots[1].runes[i].key + "</option>";
                         subRune2.innerHTML = subRune2.innerHTML +
-                            "<option value='" + data[2].slots[1].runes[i].key + "'>" + data[2].slots[1].runes[i].key + "</option>";
+                            "<option value='" + data[2].slots[1].runes[i].icon + "'>" + data[2].slots[1].runes[i].key + "</option>";
                     }
                 })
             break;
         case 'Resolve':
-            fetch("http://ddragon.leagueoflegends.com/cdn/12.7.1/data/en_US/runesReforged.json")
+            fetch("http://ddragon.leagueoflegends.com/cdn/12.8.1/data/en_US/runesReforged.json")
                 .then(res => res.json())
                 .then(data => {
                     for (let i = 0; i < 3; i++) {
                         subRune1.innerHTML = subRune1.innerHTML +
-                            "<option value='" + data[3].slots[3].runes[i].key + "'>" + data[3].slots[3].runes[i].key + "</option>";
+                            "<option value='" + data[3].slots[3].runes[i].icon + "'>" + data[3].slots[3].runes[i].key + "</option>";
                         subRune2.innerHTML = subRune2.innerHTML +
-                            "<option value='" + data[3].slots[3].runes[i].key + "'>" + data[3].slots[3].runes[i].key + "</option>";
+                            "<option value='" + data[3].slots[3].runes[i].icon + "'>" + data[3].slots[3].runes[i].key + "</option>";
                         subRune1.innerHTML = subRune1.innerHTML +
-                            "<option value='" + data[3].slots[2].runes[i].key + "'>" + data[3].slots[2].runes[i].key + "</option>";
+                            "<option value='" + data[3].slots[2].runes[i].icon + "'>" + data[3].slots[2].runes[i].key + "</option>";
                         subRune2.innerHTML = subRune2.innerHTML +
-                            "<option value='" + data[3].slots[2].runes[i].key + "'>" + data[3].slots[2].runes[i].key + "</option>";
+                            "<option value='" + data[3].slots[2].runes[i].icon + "'>" + data[3].slots[2].runes[i].key + "</option>";
                         subRune1.innerHTML = subRune1.innerHTML +
-                            "<option value='" + data[3].slots[1].runes[i].key + "'>" + data[3].slots[1].runes[i].key + "</option>";
+                            "<option value='" + data[3].slots[1].runes[i].icon + "'>" + data[3].slots[1].runes[i].key + "</option>";
                         subRune2.innerHTML = subRune2.innerHTML +
-                            "<option value='" + data[3].slots[1].runes[i].key + "'>" + data[3].slots[1].runes[i].key + "</option>";
+                            "<option value='" + data[3].slots[1].runes[i].icon + "'>" + data[3].slots[1].runes[i].key + "</option>";
                     }
                 })
             break;
         case 'Sorcery':
-            fetch("http://ddragon.leagueoflegends.com/cdn/12.7.1/data/en_US/runesReforged.json")
+            fetch("http://ddragon.leagueoflegends.com/cdn/12.8.1/data/en_US/runesReforged.json")
                 .then(res => res.json())
                 .then(data => {
                     for (let i = 0; i < 3; i++) {
                         subRune1.innerHTML = subRune1.innerHTML +
-                            "<option value='" + data[4].slots[3].runes[i].key + "'>" + data[4].slots[3].runes[i].key + "</option>";
+                            "<option value='" + data[4].slots[3].runes[i].icon + "'>" + data[4].slots[3].runes[i].key + "</option>";
                         subRune2.innerHTML = subRune2.innerHTML +
-                            "<option value='" + data[4].slots[3].runes[i].key + "'>" + data[4].slots[3].runes[i].key + "</option>";
+                            "<option value='" + data[4].slots[3].runes[i].icon + "'>" + data[4].slots[3].runes[i].key + "</option>";
                         subRune1.innerHTML = subRune1.innerHTML +
-                            "<option value='" + data[4].slots[2].runes[i].key + "'>" + data[4].slots[2].runes[i].key + "</option>";
+                            "<option value='" + data[4].slots[2].runes[i].icon + "'>" + data[4].slots[2].runes[i].key + "</option>";
                         subRune2.innerHTML = subRune2.innerHTML +
-                            "<option value='" + data[4].slots[2].runes[i].key + "'>" + data[4].slots[2].runes[i].key + "</option>";
+                            "<option value='" + data[4].slots[2].runes[i].icon + "'>" + data[4].slots[2].runes[i].key + "</option>";
                         subRune1.innerHTML = subRune1.innerHTML +
-                            "<option value='" + data[4].slots[1].runes[i].key + "'>" + data[4].slots[1].runes[i].key + "</option>";
+                            "<option value='" + data[4].slots[1].runes[i].icon + "'>" + data[4].slots[1].runes[i].key + "</option>";
                         subRune2.innerHTML = subRune2.innerHTML +
-                            "<option value='" + data[4].slots[1].runes[i].key + "'>" + data[4].slots[1].runes[i].key + "</option>";
+                            "<option value='" + data[4].slots[1].runes[i].icon   + "'>" + data[4].slots[1].runes[i].key + "</option>";
                     }
                 })
             break;
