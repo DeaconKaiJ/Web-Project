@@ -627,14 +627,56 @@ td {
     width: 100%;
     background-color: #555;
     font-size: 250%;
+    padding-top: 10px;
+    padding-left: 20px;
 }
 .guideBody{
     width: 100%;
-    height :100%;
-    background-color: #555;
+    height :auto;
+    background-color: black;
+    padding: 20px;
+}
+.guideBody span{
+    color: #ffe8e8;
+    font-size: 20px;
 }
 .guideStarter{
     width: 100%;
     height: auto;
     margin: auto;
+}
+.Sugg{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+}
+.Sugg12{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.Sugg34{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.Sugg1{
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+}
+.Sugg2{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.Sugg3{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.Sugg4{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }

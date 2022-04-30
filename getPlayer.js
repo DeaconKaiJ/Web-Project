@@ -1,4 +1,4 @@
-const apiKey = "RGAPI-ae635b09-2d6e-41c7-b239-53f674de9876";
+const apiKey = "RGAPI-498db3b5-ec7c-4085-9a7c-cd6407682a6e";
 var searchBtn = document.getElementById('sChampPlayerBTN');
 var inputName = document.getElementById('sPlayer_txt');
 var modalPlayer = document.getElementById("modalPlayer");
@@ -17,7 +17,7 @@ searchBtn.addEventListener("click", function () {
     while (historyContainer.hasChildNodes()) {
         historyContainer.removeChild(historyContainer.firstChild);
     }
-    
+
     playerName = inputName.value;
     champPlayer.textContent = playerName;
     const link = "https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + playerName + "?api_key=" + apiKey;
@@ -53,8 +53,8 @@ searchBtn.addEventListener("click", function () {
                                         const playerAssists = currentHist.querySelector("[playerAssistsSearched]")
                                         const playerImgKDA = currentHist.querySelector("[playerKDASearched]")
                                         playerImg.innerHTML = "<img src='" + imgimg + "'" + " " + "height='" + imgimgheight + "'" + " " + "width='" + imgimgwidth + "'>";
-                                        champName= data3.info.participants[j].championName;
-                                        if(champName == "MonkeyKing"){champName = "Wukong"};
+                                        champName = data3.info.participants[j].championName;
+                                        if (champName == "MonkeyKing") { champName = "Wukong" };
                                         playerNameS.textContent = champName;
                                         playerKills.textContent = data3.info.participants[j].kills;
                                         playerDeaths.textContent = data3.info.participants[j].deaths;
