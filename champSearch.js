@@ -53,8 +53,9 @@ let Support = ["3011", "3504", "3107"]
 searchButton.onclick = async function () {
     searchValue = champSearch.value;
     champHeader.textContent = searchValue;
-    if (searchValue == "Nunu & Willump") { searchValue = "Nunu"; }
-    if (searchValue == "Renata Glasc") { searchValue = "Renata"; }
+    searchValue = searchValue.toLowerCase();
+    if (searchValue == "nunu & willump") { searchValue = "Nunu"; }
+    if (searchValue == "renata glasc") { searchValue = "Renata"; }
     searchValue = searchValue.replace(/\s+/g, '');
     searchValue = searchValue.replace('.', '')
     searchValue = searchValue.replace("'", '');
@@ -112,34 +113,34 @@ searchButton.onclick = async function () {
             rDesc = rDesc.replaceAll("<br><br>", " ")
             rab.textContent = "R: " + data[key].spells[3].name + ": " + rDesc
             if (data[key].tags[0] == "Fighter") {
-                r1.innerHTML = "<img src='http://ddragon.leagueoflegends.com/cdn/12.8.1/img/item/"+Fighter[0] + ".png'> style=width:40px;height:40px;"
-                r2.textContent = Fighter[1]
-                r3.textContent = Fighter[2]
+                r1.innerHTML = "<img src='http://ddragon.leagueoflegends.com/cdn/12.8.1/img/item/"+Fighter[0] + ".png' style=width:50px;height:50px;>"
+                r2.innerHTML = "<img src='http://ddragon.leagueoflegends.com/cdn/12.8.1/img/item/"+Fighter[1] + ".png' style=width:50px;height:50px;>"
+                r3.innerHTML = "<img src='http://ddragon.leagueoflegends.com/cdn/12.8.1/img/item/"+Fighter[2] + ".png' style=width:50px;height:50px;>"
             }
             if (data[key].tags[0] == "Marksman") {
-                r1.textContent = Marskman[0]
-                r2.textContent = Marskman[1]
-                r3.textContent = Marskman[2]
+                r1.innerHTML = "<img src='http://ddragon.leagueoflegends.com/cdn/12.8.1/img/item/"+Marskman[0] + ".png' style=width:50px;height:50px;>"
+                r2.innerHTML = "<img src='http://ddragon.leagueoflegends.com/cdn/12.8.1/img/item/"+Marskman[1] + ".png' style=width:50px;height:50px;>"
+                r3.innerHTML = "<img src='http://ddragon.leagueoflegends.com/cdn/12.8.1/img/item/"+Marskman[2] + ".png' style=width:50px;height:50px;>"
             }
             if (data[key].tags[0] == "Assassin") {
-                r1.textContent = Assassin[0]
-                r2.textContent = Assassin[1]
-                r3.textContent = Assassin[2]
+                r1.innerHTML = "<img src='http://ddragon.leagueoflegends.com/cdn/12.8.1/img/item/"+Assassin[0] + ".png' style=width:50px;height:50px;>"
+                r2.innerHTML = "<img src='http://ddragon.leagueoflegends.com/cdn/12.8.1/img/item/"+Assassin[1] + ".png' style=width:50px;height:50px;>"
+                r3.innerHTML = "<img src='http://ddragon.leagueoflegends.com/cdn/12.8.1/img/item/"+Assassin[2] + ".png' style=width:50px;height:50px;>"
             }
             if (data[key].tags[0] == "Tank") {
-                r1.textContent = Tank[0]
-                r2.textContent = Tank[1]
-                r3.textContent = Tank[2]
+                r1.innerHTML = "<img src='http://ddragon.leagueoflegends.com/cdn/12.8.1/img/item/"+Tank[0] + ".png' style=width:50px;height:50px;>"
+                r2.innerHTML = "<img src='http://ddragon.leagueoflegends.com/cdn/12.8.1/img/item/"+Tank[1] + ".png' style=width:50px;height:50px;>"
+                r3.innerHTML = "<img src='http://ddragon.leagueoflegends.com/cdn/12.8.1/img/item/"+Tank[2] + ".png' style=width:50px;height:50px;>"
             }
             if (data[key].tags[0] == "Mage") {
-                r1.textContent = Mage[0]
-                r2.textContent = Mage[1]
-                r3.textContent = Mage[2]
+                r1.innerHTML = "<img src='http://ddragon.leagueoflegends.com/cdn/12.8.1/img/item/"+Mage[0] + ".png' style=width:50px;height:50px;>"
+                r2.innerHTML = "<img src='http://ddragon.leagueoflegends.com/cdn/12.8.1/img/item/"+Mage[1] + ".png' style=width:50px;height:50px;>"
+                r3.innerHTML = "<img src='http://ddragon.leagueoflegends.com/cdn/12.8.1/img/item/"+Mage[2] + ".png' style=width:50px;height:50px;>"
             }
             if (data[key].tags[0] == "Support") {
-                r1.textContent = Support[0]
-                r2.textContent = Support[1]
-                r3.textContent = Support[2]
+                r1.innerHTML = "<img src='http://ddragon.leagueoflegends.com/cdn/12.8.1/img/item/"+Support[0] + ".png' style=width:50px;height:50px;>"
+                r2.innerHTML = "<img src='http://ddragon.leagueoflegends.com/cdn/12.8.1/img/item/"+Support[1] + ".png' style=width:50px;height:50px;>"
+                r3.innerHTML = "<img src='http://ddragon.leagueoflegends.com/cdn/12.8.1/img/item/"+Support[2] + ".png' style=width:50px;height:50px;>"
             }
         })
 }

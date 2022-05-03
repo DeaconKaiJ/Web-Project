@@ -713,3 +713,8 @@ td {
     flex-direction: row;
     justify-content:space-evenly;
 }
+.recommenededItems{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}

@@ -24,7 +24,7 @@ if ($conn->connect_error) {
     <script src="https://kit.fontawesome.com/4e724250be.js" crossorigin="anonymous"></script>
     <script src="allItems.js" defer></script>
     <script src="summonerSpells.js" defer></script>
-    <title>Landing Page</title>
+    <title>test Page</title>
 </head>
 
 <body>
@@ -98,7 +98,7 @@ if ($conn->connect_error) {
                                         <div class="MN" id="MN"></div>
                                     </div>
                                 </div>
-                                <br><br>
+                                <br>
                                 <div class="champAbilities">
                                     <div class="P" id="P"></div>
                                     <br>
