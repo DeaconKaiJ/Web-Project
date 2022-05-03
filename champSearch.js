@@ -43,12 +43,12 @@ var r1 = document.getElementById("r1")
 var r2 = document.getElementById("r2")
 var r3 = document.getElementById("r3")
 
-let Fighter = ["Trinity Force", "Deaths Dance", "Sterak's Gage"]
-let Marskman = ["Infinity Edge", "LDR", "Rapid Firecannon"]
-let Assassin = ["The Collector", "Duskblade of Draktharr", "LDR"]
-let Tank = ["Thornmail", "Winters Approach", "Randuin's Omen"]
-let Mage = ["Zhonya's Hourglass", "Rabadon's Deathcap", "Liandry's Anguish"]
-let Support = ["Chemtech Putrifier", "Ardent Censer", "Redemption"]
+let Fighter = ["3078", "6333", "3053"]
+let Marskman = ["3031", "3036", "3094"]
+let Assassin = ["6676", "6691", "3036"]
+let Tank = ["3075", "3119", "3143"]
+let Mage = ["3157", "3089", "6653"]
+let Support = ["3011", "3504", "3107"]
 
 searchButton.onclick = async function () {
     searchValue = champSearch.value;
@@ -112,7 +112,7 @@ searchButton.onclick = async function () {
             rDesc = rDesc.replaceAll("<br><br>", " ")
             rab.textContent = "R: " + data[key].spells[3].name + ": " + rDesc
             if (data[key].tags[0] == "Fighter") {
-                r1.textContent = Fighter[0]
+                r1.innerHTML = "<img src='http://ddragon.leagueoflegends.com/cdn/12.8.1/img/item/"+Fighter[0] + ".png'> style=width:40px;height:40px;"
                 r2.textContent = Fighter[1]
                 r3.textContent = Fighter[2]
             }

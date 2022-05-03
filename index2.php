@@ -489,44 +489,90 @@ if ($conn->connect_error) {
                                     <table>
                                         <tr>
                                             <th>Level</th>
-                                            <th>1</th>
-                                            <th>2</th>
-                                            <th>3</th>
-                                            <th>4</th>
-                                            <th>5</th>
-                                            <th>6</th>
-                                            <th>7</th>
-                                            <th>8</th>
-                                            <th>9</th>
-                                            <th>10</th>
-                                            <th>11</th>
-                                            <th>12</th>
-                                            <th>13</th>
-                                            <th>14</th>
-                                            <th>15</th>
-                                            <th>16</th>
-                                            <th>17</th>
-                                            <th>18</th>
+                                            <th>Skill</th>
                                         </tr>
                                         <tr>
-                                            <td>Skill</td>
+                                            <td>1</td>
                                             <td><?php echo htmlspecialchars($build['l1']) ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
                                             <td><?php echo htmlspecialchars($build['l2']) ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
                                             <td><?php echo htmlspecialchars($build['l3']) ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
                                             <td><?php echo htmlspecialchars($build['l4']) ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
                                             <td><?php echo htmlspecialchars($build['l5']) ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
                                             <td><?php echo htmlspecialchars($build['l6']) ?></td>
+                                        </tr>
+                                    </table>
+                                    <table>
+                                        <tr>
+                                            <th>Level</th>
+                                            <th>Skill</th>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
                                             <td><?php echo htmlspecialchars($build['l7']) ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>8</td>
                                             <td><?php echo htmlspecialchars($build['l8']) ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>9</td>
                                             <td><?php echo htmlspecialchars($build['l9']) ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>10</td>
                                             <td><?php echo htmlspecialchars($build['l10']) ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>11</td>
                                             <td><?php echo htmlspecialchars($build['l11']) ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>12</td>
                                             <td><?php echo htmlspecialchars($build['l12']) ?></td>
+                                        </tr>
+                                    </table>
+                                    <table>
+                                        <tr>
+                                            <th>Level</th>
+                                            <th>Skill</th>
+                                        </tr>
+                                        <tr>
+                                            <td>13</td>
                                             <td><?php echo htmlspecialchars($build['l13']) ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>14</td>
                                             <td><?php echo htmlspecialchars($build['l14']) ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>15</td>
                                             <td><?php echo htmlspecialchars($build['l15']) ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>16</td>
                                             <td><?php echo htmlspecialchars($build['l16']) ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>17</td>
                                             <td><?php echo htmlspecialchars($build['l17']) ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>18</td>
                                             <td><?php echo htmlspecialchars($build['l18']) ?></td>
                                         </tr>
                                     </table>

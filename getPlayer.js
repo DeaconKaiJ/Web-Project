@@ -1,4 +1,4 @@
-const apiKey = "RGAPI-498db3b5-ec7c-4085-9a7c-cd6407682a6e";
+const apiKey = "RGAPI-7e31d54e-e66a-42ea-99b7-89767e0bbe2c";
 var searchBtn = document.getElementById('sChampPlayerBTN');
 var inputName = document.getElementById('sPlayer_txt');
 var modalPlayer = document.getElementById("modalPlayer");
@@ -30,15 +30,11 @@ searchBtn.addEventListener("click", function () {
             fetch(matchIDlink)
                 .then(res2 => res2.json())
                 .then(data2 => {
-                    console.log(data2)
                     for (i = 0; i < 5; i++) {
                         matchLink = "https://europe.api.riotgames.com/lol/match/v5/matches/" + data2[i] + "?api_key=" + apiKey;
-                        console.log(matchLink);
-                        console.log(data2[i]);
                         fetch(matchLink)
                             .then(res3 => res3.json())
                             .then(data3 => {
-                                console.log(data3)
                                 userLength = data3.info.participants.length;
                                 for (j = 0; j < userLength; j++) {
                                     if (data3.info.participants[j].puuid == userPuuid) {

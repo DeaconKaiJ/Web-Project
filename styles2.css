@@ -328,7 +328,7 @@ a:visited {
 }
 
 .modal-bodyPlayer {
-    margin: 5px;
+    margin-top: 55px;
     height: 80vh;
     overflow-y: auto;
 }
@@ -381,17 +381,19 @@ a:visited {
 .champStats {
     display: flex;
     flex-direction: row;
-    gap: 25px;
+    justify-content: space-around;
 }
 
 .dmgStats {
     display: flex;
     flex-direction: column;
+    gap: 5px;
 }
 
 .otherStats {
     display: flex;
     flex-direction: column;
+    gap: 5px;
 }
 
 .topCreate {
@@ -580,6 +582,7 @@ a:visited {
     display: none;
     overflow: hidden;
     background-color: #f1f1f1;
+    padding: 10px;
 }
 
 .skillorderRunes {
@@ -588,11 +591,16 @@ a:visited {
     gap: 184px;
     margin-bottom: 10px;
 }
+.skillOrder{
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+}
 
 .runes {
     display: flex;
     flex-direction: row;
-    gap: 15px;
+    gap: 80px;
 }
 
 .runes span {
