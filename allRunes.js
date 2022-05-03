@@ -1,7 +1,3 @@
-//var sum1 = document.getElementById('summonerSpells1')
-//item1.innerHTML = item1.innerHTML +
-//"<option value='" + data[key].name + "'>" + data[key].name + "</option>";
-
 var mainKeystone = document.getElementById('mainKeystone')
 var mainRune = document.getElementById('mainRune')
 var mainRune1 = document.getElementById('mainRune2')
@@ -68,7 +64,7 @@ mainKeystone.onchange = function () {
         mainRune3.removeChild(mainRune3.firstChild);
     }
     switch (mainKeystone.value) {
-        case 'Domination':
+        case 'perk-images/Styles/7200_Domination.png':
             fetch("http://ddragon.leagueoflegends.com/cdn/12.8.1/data/en_US/runesReforged.json")
                 .then(res => res.json())
                 .then(data => {
@@ -87,7 +83,7 @@ mainKeystone.onchange = function () {
                     }
                 })
             break;
-        case 'Inspiration':
+        case 'perk-images/Styles/7203_Whimsy.png':
             fetch("http://ddragon.leagueoflegends.com/cdn/12.8.1/data/en_US/runesReforged.json")
                 .then(res => res.json())
                 .then(data => {
@@ -103,7 +99,7 @@ mainKeystone.onchange = function () {
                     }
                 })
             break;
-        case 'Precision':
+        case 'perk-images/Styles/7201_Precision.png':
             fetch("http://ddragon.leagueoflegends.com/cdn/12.8.1/data/en_US/runesReforged.json")
                 .then(res => res.json())
                 .then(data => {
@@ -121,7 +117,7 @@ mainKeystone.onchange = function () {
                     }
                 })
             break;
-        case 'Resolve':
+        case 'perk-images/Styles/7204_Resolve.png':
             fetch("http://ddragon.leagueoflegends.com/cdn/12.8.1/data/en_US/runesReforged.json")
                 .then(res => res.json())
                 .then(data => {
@@ -137,7 +133,7 @@ mainKeystone.onchange = function () {
                     }
                 })
             break;
-        case 'Sorcery':
+        case 'perk-images/Styles/7202_Sorcery.png':
             fetch("http://ddragon.leagueoflegends.com/cdn/12.8.1/data/en_US/runesReforged.json")
                 .then(res => res.json())
                 .then(data => {
@@ -164,7 +160,7 @@ subKeystone.onchange = function () {
         subRune2.removeChild(subRune2.firstChild);
     }
     switch (subKeystone.value) {
-        case 'Domination':
+        case 'perk-images/Styles/7200_Domination.png':
             fetch("http://ddragon.leagueoflegends.com/cdn/12.8.1/data/en_US/runesReforged.json")
                 .then(res => res.json())
                 .then(data => {
@@ -187,7 +183,7 @@ subKeystone.onchange = function () {
                     }
                 })
             break;
-        case 'Inspiration':
+        case 'perk-images/Styles/7203_Whimsy.png':
             fetch("http://ddragon.leagueoflegends.com/cdn/12.8.1/data/en_US/runesReforged.json")
                 .then(res => res.json())
                 .then(data => {
@@ -207,7 +203,7 @@ subKeystone.onchange = function () {
                     }
                 })
             break;
-        case 'Precision':
+        case 'perk-images/Styles/7201_Precision.png':
             fetch("http://ddragon.leagueoflegends.com/cdn/12.8.1/data/en_US/runesReforged.json")
                 .then(res => res.json())
                 .then(data => {
@@ -227,7 +223,7 @@ subKeystone.onchange = function () {
                     }
                 })
             break;
-        case 'Resolve':
+        case 'perk-images/Styles/7204_Resolve.png':
             fetch("http://ddragon.leagueoflegends.com/cdn/12.8.1/data/en_US/runesReforged.json")
                 .then(res => res.json())
                 .then(data => {
@@ -247,7 +243,7 @@ subKeystone.onchange = function () {
                     }
                 })
             break;
-        case 'Sorcery':
+        case 'perk-images/Styles/7202_Sorcery.png':
             fetch("http://ddragon.leagueoflegends.com/cdn/12.8.1/data/en_US/runesReforged.json")
                 .then(res => res.json())
                 .then(data => {
