@@ -59,7 +59,6 @@ searchButton.onclick = async function () {
     searchValue = searchValue.replace(/\s+/g, '');
     searchValue = searchValue.replace('.', '')
     searchValue = searchValue.replace("'", '');
-    searchValue = searchValue.toLowerCase();
     searchValue = searchValue.charAt(0).toUpperCase() + searchValue.slice(1);
     if (searchValue == "Jarvaniv"){searchValue ="JarvanIV";}
     if (searchValue == "Kogmaw"){searchValue ="KogMaw";}
