@@ -585,15 +585,14 @@ a:visited {
 .skillorderRunes {
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 184px;
     margin-bottom: 10px;
 }
 
 .runes {
     display: flex;
-    flex-direction: column;
-    gap: 5px;
-
+    flex-direction: row;
+    gap: 15px;
 }
 
 .runes span {
@@ -602,17 +601,18 @@ a:visited {
 
 .MainRunes {
     display: flex;
-    flex-direction: row;
-    gap: 8px;
+    flex-direction: column;
 }
 
 .SupportRunes {
     display: flex;
+    flex-direction: column;
     gap: 8px;
 }
 
 .RuneAttributes {
     display: flex;
+    flex-direction: column;
     gap: 8px;
 }
 

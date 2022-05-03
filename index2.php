@@ -1,3 +1,18 @@
+<?php
+$conn = mysqli_connect('localhost', 'root', '', 'userbuilds');
+if ($conn->connect_error) {
+    echo "$conn->connect_error";
+    die("Connection Failed : " . $conn->connect_error);
+} else {
+    $sql = "SELECT * FROM newuserbuild;";
+    $result = mysqli_query($conn, $sql);
+    $builds = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    mysqli_free_result($result);
+    mysqli_close($conn);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +24,7 @@
     <script src="https://kit.fontawesome.com/4e724250be.js" crossorigin="anonymous"></script>
     <script src="allItems.js" defer></script>
     <script src="summonerSpells.js" defer></script>
-    <title>Document</title>
+    <title>Landing Page</title>
 </head>
 
 <body>
@@ -17,7 +32,7 @@
         <div class="FlexAll Flex1">
             <div class="pageTitle"><span class>League of Legends - The Essentials</span></div>
             <div class="NavButtons">
-                <a class="NavBTN HomeBTN" href="index2.html"><span class>Home</span></a>
+                <a class="NavBTN HomeBTN" href="index2.php"><span class>Home</span></a>
                 <a class="NavBTN KeyTermsBTN" href="metaKeyTerms.html"><span class>Key Terminologies/Meta</span></a>
                 <a class="NavBTN GuideBTN" href="guide.html"><span class>Guide</span></a>
             </div>
@@ -35,24 +50,26 @@
                             </div>
                             <div class="modal-bodyPlayer" playerSearchContainer>
                                 <template playerSearch>
-                                <div class="templatePlayer">
-                                    <div class="playerImgSearched" id="playerImgSearched" playerImgSearched></div>
-                                    <div class="statsSearched">
-                                        <div class="playerNameSearched" id="playerNameSearched" playerNameSearched></div>
-                                        <div class="KDA">
-                                            <div class="playerKillSearched" id="playerKillSearched" playerKillSearched></div>
-                                            <div class="playerDeathsSearched" id="playerDeathsSearched" playerDeathsSearched></div>
-                                            <div class="playerAssistsSearched" id="playerAssistsSearched"playerAssistsSearched></div>
+                                    <div class="templatePlayer">
+                                        <div class="playerImgSearched" id="playerImgSearched" playerImgSearched></div>
+                                        <div class="statsSearched">
+                                            <div class="playerNameSearched" id="playerNameSearched" playerNameSearched>
+                                            </div>
+                                            <div class="KDA">
+                                                <div class="playerKillSearched" id="playerKillSearched" playerKillSearched></div>
+                                                <div class="playerDeathsSearched" id="playerDeathsSearched" playerDeathsSearched></div>
+                                                <div class="playerAssistsSearched" id="playerAssistsSearched" playerAssistsSearched></div>
+                                            </div>
+                                            <div class="playerKDASearched" id="playerKDASearched" playerKDASearched>
+                                            </div>
                                         </div>
-                                        <div class="playerKDASearched" id="playerKDASearched"playerKDASearched></div>
                                     </div>
-                                </div>
-                            </template>
+                                </template>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="sChamp">
                     <span class>Search a Champion</span>
                     <input class="sChamp_txt" id="sChamp_txt" type="search" placeholder="Choose a Champion">
@@ -115,10 +132,10 @@
                 <script src="getPlayer.js"></script>
                 <script src="champSearch.js"></script>
             </div>
+
             <div class="userBuilds">
                 <div class="createFilter">
-                    <button type="button" class="createButton"><i class="fa-solid fa-circle-plus"
-                            style="font-size: 32px;"></i></button>
+                    <button type="button" class="createButton"><i class="fa-solid fa-circle-plus" style="font-size: 32px;"></i></button>
                     <!-- The Modal -->
                     <div class="modal">
                         <!-- Modal content -->
@@ -130,8 +147,7 @@
                             <div class="modal-body">
                                 <form action="connect.php" method="post">
                                     <div class="topCreate">
-                                        <label for="buildName">Build Name:</label><input type="text" id="buildName"
-                                            name="buildName">
+                                        <label for="buildName">Build Name:</label><input type="text" id="buildName" name="buildName">
                                         <label for="champs">Choose a Champion:</label>
                                         <select name="champs" id="champs">
                                         </select>
@@ -214,23 +230,23 @@
                                     <div class="createAddRunes">
                                         <label for="addRune1">Additional Rune Option 1:</label>
                                         <select name="addRune1" id="addRune1">
-                                            <option value="AdaptiveForce">Adaptive Force</option>
-                                            <option value="AttackSpeed">Attack Speed</option>
-                                            <option value="AbilityHaste">Ability Haste</option>
+                                            <option value="perk-images/StatMods/StatModsAdaptiveForceIcon.png">Adaptive Force</option>
+                                            <option value="perk-images/StatMods/StatModsAttackSpeedIcon.png">Attack Speed</option>
+                                            <option value="perk-images/StatMods/StatModsCDRScalingIcon.png">Ability Haste</option>
                                         </select>
 
                                         <label for="addRune2">Additional Rune Option 2:</label>
                                         <select name="addRune2" id="addRune2">
-                                            <option value="AdaptiveForce">Adaptive Force</option>
-                                            <option value="Armor">Armor</option>
-                                            <option value="Magic Resist">Magic Resist</option>
+                                            <option value="perk-images/StatMods/StatModsAdaptiveForceIcon.png">Adaptive Force</option>
+                                            <option value="perk-images/StatMods/StatModsArmorIcon.png">Armor</option>
+                                            <option value="perk-images/StatMods/StatModsMagicResIcon.png">Magic Resist</option>
                                         </select>
 
                                         <label for="addRune3">Additional Rune Option 3:</label>
                                         <select name="addRune3" id="addRune3">
-                                            <option value="Health">Health</option>
-                                            <option value="Armor">Armor</option>
-                                            <option value="Magic Resist">Magic Resist</option>
+                                            <option value="perk-images/StatMods/StatModsHealthScalingIcon.png">Health</option>
+                                            <option value="perk-images/StatMods/StatModsArmorIcon.png">Armor</option>
+                                            <option value="perk-images/StatMods/StatModsMagicResIcon.png">Magic Resist</option>
                                         </select>
                                     </div>
                                     <br><br>
@@ -427,357 +443,118 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <script src="formChamps.js" defer></script>
                     <script src="newEntryModal.js"></script>
                     <script src="allRunes.js"></script>
                 </div>
-                <div class="uBuild">
-                    <button type="button" class="collapsible">
-                        <div class="champPicture"><img
-                                src="https://preview.redd.it/eet8cl309bt71.png?auto=webp&s=1d30b76e99a05d7a35e13f77feffa88a4c0dc48c"
-                                style="width:100px;height:100px;"></div>
-                        <div class="champNameSkillOrder">
-                            <div class="champName"><span class>Nunu&Willump</span></div>
-                            <div class="champSkillOrder">
-                                <div class="skills skill1">Q</div>
-                                <div class="skills skill2">W</div>
-                                <div class="skills skill3">E</div>
-                                <div class="skills skill4">R</div>
-                            </div>
-                        </div>
-                        <div class="champRS">
-                            <div class="champRunes">
-                                <div class="rune1">Precision</div>
-                                <div class="rune2">Domination</div>
-                            </div>
-                            <div class="champSS">
-                                <div class="ss1">Teleport</div>
-                                <div class="ss2">Flash</div>
-                            </div>
-                        </div>
-                        <div class="titleItems">
-                            <div class="buildTitle">Maximum Characters is thirty!!</div>
-                            <div class="buildItems">
-                                <div class="buildItems1">Boots of swift</div>
-                                <div class="buildItems2">lich bane</div>
-                                <div class="buildItems3">hextech gunblade</div>
-                                <div class="buildItems4">lockets of the iron solari</div>
-                                <div class="buildItems5">zhonya hourglass</div>
-                                <div class="buildItems6">frozen mallet</div>
-                            </div>
-                        </div>
-                    </button>
-                    <div class="content">
-                        <div class="skillorderRunes">
-                            <div class="skillOrder">
-                                <table>
-                                    <tr>
-                                        <th>Level</th>
-                                        <th>1</th>
-                                        <th>2</th>
-                                        <th>3</th>
-                                        <th>4</th>
-                                        <th>5</th>
-                                        <th>6</th>
-                                        <th>7</th>
-                                        <th>8</th>
-                                        <th>9</th>
-                                        <th>10</th>
-                                        <th>11</th>
-                                        <th>12</th>
-                                        <th>13</th>
-                                        <th>14</th>
-                                        <th>15</th>
-                                        <th>16</th>
-                                        <th>17</th>
-                                        <th>18</th>
-                                    </tr>
-                                    <tr>
-                                        <td>Skill</td>
-                                        <td>Q</td>
-                                        <td>Q</td>
-                                        <td>Q</td>
-                                        <td>Q</td>
-                                        <td>Q</td>
-                                        <td>Q</td>
-                                        <td>Q</td>
-                                        <td>Q</td>
-                                        <td>Q</td>
-                                        <td>Q</td>
-                                        <td>Q</td>
-                                        <td>Q</td>
-                                        <td>Q</td>
-                                        <td>Q</td>
-                                        <td>Q</td>
-                                        <td>Q</td>
-                                        <td>Q</td>
-                                        <td>Q</td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div class="runes">
-                                <div class="MainRunes">
-                                    <div class="mainRuneTree"><span class>Precision</span></div>
-                                    <div class="keystone">Press the Attack</div>
-                                    <div class="mainRune1!">Prescence of mind</div>
-                                    <div class="mainRune2!">Legend:Alacrity</div>
-                                    <div class="mainRune3!">Coup de Grace</div>
-                                </div>
-                                <div class="SupportRunes">
-                                    <div class="supportRuneTree"><span class>Domination</span></div>
-                                    <div class="supportRune1!">Sudden Impact</div>
-                                    <div class="supportRune2!">Eyeball Collection</div>
-                                    <div class="supportRune3!">Relentless Hunter</div>
-                                </div>
-                                <div class="RuneAttributes">
-                                    <div class="attribute1!">Offense:Attack Speed</div>
-                                    <div class="attribute2!">Flex:Adaptive Force</div>
-                                    <div class="attribute3!">Defense:Health</div>
+                <?php foreach ($builds as $build) { ?>
+                    <div class="uBuild">
+                        <button type="button" class="collapsible">
+                            <div class="champPicture"><img src="http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/<?php echo htmlspecialchars($build['champ']) ?>.png" style="width:100px;height:100px;"></div>
+                            <div class="champNameSkillOrder">
+                                <div class="champName"><span class><?php echo htmlspecialchars($build['champ']) ?></span></div>
+                                <div class="champSkillOrder">
+                                    <div class="skills skill1"><?php echo htmlspecialchars($build['skill1']) ?></div>
+                                    <div class="skills skill2"><?php echo htmlspecialchars($build['skill2']) ?></div>
+                                    <div class="skills skill3"><?php echo htmlspecialchars($build['skill3']) ?></div>
+                                    <div class="skills skill4"><?php echo htmlspecialchars($build['skill4']) ?></div>
                                 </div>
                             </div>
+                            <div class="champRS">
+                                <div class="champRunes">
+                                    <div class="rune1"><img src="https://ddragon.canisback.com/img/<?php echo htmlspecialchars($build['mainKeystone']) ?>" style="width:40px;height:40px;"></div>
+                                    <div class="rune2"><img src="https://ddragon.canisback.com/img/<?php echo htmlspecialchars($build['subKeystone']) ?>" style="width:40px;height:40px;"></div>
+                                </div>
+                                <div class="champSS">
+                                    <div class="ss1"><img src="http://ddragon.leagueoflegends.com/cdn/12.8.1/img/spell/<?php echo htmlspecialchars($build['ss1']) ?>" style="width:40px;height:40px;"></div>
+                                    <div class="ss2"><img src="http://ddragon.leagueoflegends.com/cdn/12.8.1/img/spell/<?php echo htmlspecialchars($build['ss2']) ?>" style="width:40px;height:40px;"></div>
+                                </div>
+                            </div>
+                            <div class="titleItems">
+                                <div class="buildTitle"><?php echo htmlspecialchars($build['buildName']) ?></div>
+                                <div class="buildItems">
+                                    <div class="buildItems1"><img src="http://ddragon.leagueoflegends.com/cdn/12.8.1/img/item/<?php echo htmlspecialchars($build['item1']) ?>" style="width:40px;height:40px;"></div>
+                                    <div class="buildItems2"><img src="http://ddragon.leagueoflegends.com/cdn/12.8.1/img/item/<?php echo htmlspecialchars($build['item2']) ?>" style="width:40px;height:40px;"></div>
+                                    <div class="buildItems3"><img src="http://ddragon.leagueoflegends.com/cdn/12.8.1/img/item/<?php echo htmlspecialchars($build['item3']) ?>" style="width:40px;height:40px;"></div>
+                                    <div class="buildItems4"><img src="http://ddragon.leagueoflegends.com/cdn/12.8.1/img/item/<?php echo htmlspecialchars($build['item4']) ?>" style="width:40px;height:40px;"></div>
+                                    <div class="buildItems5"><img src="http://ddragon.leagueoflegends.com/cdn/12.8.1/img/item/<?php echo htmlspecialchars($build['item5']) ?>" style="width:40px;height:40px;"></div>
+                                    <div class="buildItems6"><img src="http://ddragon.leagueoflegends.com/cdn/12.8.1/img/item/<?php echo htmlspecialchars($build['item6']) ?>" style="width:40px;height:40px;"></div>
+                                </div>
+                            </div>
+                        </button>
+                        <div class="content">
+                            <div class="skillorderRunes">
+                                <div class="skillOrder">
+                                    <table>
+                                        <tr>
+                                            <th>Level</th>
+                                            <th>1</th>
+                                            <th>2</th>
+                                            <th>3</th>
+                                            <th>4</th>
+                                            <th>5</th>
+                                            <th>6</th>
+                                            <th>7</th>
+                                            <th>8</th>
+                                            <th>9</th>
+                                            <th>10</th>
+                                            <th>11</th>
+                                            <th>12</th>
+                                            <th>13</th>
+                                            <th>14</th>
+                                            <th>15</th>
+                                            <th>16</th>
+                                            <th>17</th>
+                                            <th>18</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Skill</td>
+                                            <td><?php echo htmlspecialchars($build['l1']) ?></td>
+                                            <td><?php echo htmlspecialchars($build['l2']) ?></td>
+                                            <td><?php echo htmlspecialchars($build['l3']) ?></td>
+                                            <td><?php echo htmlspecialchars($build['l4']) ?></td>
+                                            <td><?php echo htmlspecialchars($build['l5']) ?></td>
+                                            <td><?php echo htmlspecialchars($build['l6']) ?></td>
+                                            <td><?php echo htmlspecialchars($build['l7']) ?></td>
+                                            <td><?php echo htmlspecialchars($build['l8']) ?></td>
+                                            <td><?php echo htmlspecialchars($build['l9']) ?></td>
+                                            <td><?php echo htmlspecialchars($build['l10']) ?></td>
+                                            <td><?php echo htmlspecialchars($build['l11']) ?></td>
+                                            <td><?php echo htmlspecialchars($build['l12']) ?></td>
+                                            <td><?php echo htmlspecialchars($build['l13']) ?></td>
+                                            <td><?php echo htmlspecialchars($build['l14']) ?></td>
+                                            <td><?php echo htmlspecialchars($build['l15']) ?></td>
+                                            <td><?php echo htmlspecialchars($build['l16']) ?></td>
+                                            <td><?php echo htmlspecialchars($build['l17']) ?></td>
+                                            <td><?php echo htmlspecialchars($build['l18']) ?></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="runes">
+                                    <div class="MainRunes">
+                                        <div class="mainRune!"><img src="https://ddragon.canisback.com/img/<?php echo htmlspecialchars($build['mainRune']) ?>" style="width:40px;height:40px;"></div>
+                                        <div class="mainRune1!"><img src="https://ddragon.canisback.com/img/<?php echo htmlspecialchars($build['mainRune1']) ?>" style="width:40px;height:40px;"></div>
+                                        <div class="mainRune2!"><img src="https://ddragon.canisback.com/img/<?php echo htmlspecialchars($build['mainRune2']) ?>" style="width:40px;height:40px;"></div>
+                                        <div class="mainRune3!"><img src="https://ddragon.canisback.com/img/<?php echo htmlspecialchars($build['mainRune3']) ?>" style="width:40px;height:40px;"></div>
+                                    </div>
+                                    <div class="SupportRunes">
+                                        <div class="supportRune1!"><img src="https://ddragon.canisback.com/img/<?php echo htmlspecialchars($build['subRune1']) ?>" style="width:40px;height:40px;"></div>
+                                        <div class="supportRune2!"><img src="https://ddragon.canisback.com/img/<?php echo htmlspecialchars($build['subRune2']) ?>" style="width:40px;height:40px;"></div>
+
+                                    </div>
+                                    <div class="RuneAttributes">
+                                        <div class="attribute1!"><img src="https://ddragon.canisback.com/img/<?php echo htmlspecialchars($build['addRune1']) ?>" style="width:40px;height:40px;"></div>
+                                        <div class="attribute2!"><img src="https://ddragon.canisback.com/img/<?php echo htmlspecialchars($build['addRune2']) ?>" style="width:40px;height:40px;"></div>
+                                        <div class="attribute3!"><img src="https://ddragon.canisback.com/img/<?php echo htmlspecialchars($build['addRune3']) ?>" style="width:40px;height:40px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mainContent"><?php echo htmlspecialchars($build['paragraph']) ?></div>
                         </div>
-                        <div class="mainContent">Between these two, there is a strange relationship. Companies collect
-                            and analyze this data, but rarely do readers get to see it.
 
-                            New data from Amazon, released to The Atlantic, gives us a peek at what, specifically,
-                            readers connect with. These are the most popular highlights in some of the service’s most
-                            popular books.
-
-                            Amazon doesn’t release sales data for Kindles, so the question of what makes the list of
-                            most-popular highlights is somewhat interesting. It takes more than 4,000 highlights to make
-                            something the most popular passage in Pride and Prejudice, but only about 650 for something
-                            to be the most popular highlight in The Lion, the Witch, and the Wardrobe.
-
-                            Below, you’ll find passages from Austen, Tolkien, the Bible, and every tome of Harry Potter.
-                            (With some spoilers—though don’t worry, it’s not that section of Half-Blood Prince.)
-
-                            Are these your favorite passages too? Are they the most beautiful, the most poetic, or just,
-                            well, the most maudlin?
-
-                            The most popular from Pride and Prejudice:
-
-                            It is a truth universally acknowledged, that a single man in possession of a good fortune,
-                            must be in want of a wife.
-
-                            The Lord of the Rings:
-
-                            The wide world is all about you: you can fence yourselves in, but you cannot for ever fence
-                            it out.
-
-                            From the Bible (specifically, the New International Version—the best-selling electronic
-                            version on Amazon):
-
-                            Do not be anxious about anything, but in every situation, by prayer and petition, with
-                            thanksgiving, present your requests to God. And the peace of God, which transcends all
-                            understanding, will guard your hearts and your minds in Christ Jesus.
-
-                            Little Women:
-
-                            There are many Beths in the world, shy and quiet, sitting in corners till needed, and living
-                            for others so cheerfully that no one sees the sacrifices till the little cricket on the
-                            hearth stops chirping, and the sweet, sunshiny presence vanishes, leaving silence and shadow
-                            behind.
-
-                            A Wrinkle In Time:
-
-                            But of course we can’t take any credit for our talents. It’s how we use them that counts.
-
-                            The Lion, the Witch, and the Wardrobe:
-
-                            Wrong will be right,
-                            when Aslan comes in sight,
-                            At the sound of his roar,
-                            sorrows will be no more,
-                            When he bares his teeth,
-                            winter meets its death,
-                            And when he shakes his mane,
-                            we shall have spring again.</div>
                     </div>
-                </div>
-                <div class="uBuild">
-                    <button type="button" class="collapsible">
-                        <div class="champPicture"><img
-                                src="https://preview.redd.it/eet8cl309bt71.png?auto=webp&s=1d30b76e99a05d7a35e13f77feffa88a4c0dc48c"
-                                style="width:100px;height:100px;"></div>
-                        <div class="champNameSkillOrder">
-                            <div class="champName"><span class>Nunu&Willump</span></div>
-                            <div class="champSkillOrder">
-                                <div class="skills skill1">Q</div>
-                                <div class="skills skill2">W</div>
-                                <div class="skills skill3">E</div>
-                                <div class="skills skill4">R</div>
-                            </div>
-                        </div>
-                        <div class="champRS">
-                            <div class="champRunes">
-                                <div class="rune1"><img
-                                        src="https://static.wikia.nocookie.net/leagueoflegends/images/d/d8/PrecisionSquare.png/revision/latest/scale-to-width-down/250?cb=20170927105636"
-                                        style="width:40px;height:40px;"></div>
-                                <div class="rune2"><img
-                                        src="https://static.wikia.nocookie.net/leagueoflegends/images/9/91/InspirationSquare.png/revision/latest/scale-to-width-down/250?cb=20170927105636"
-                                        style="width:40px;height:40px;"></div>
-                            </div>
-                            <div class="champSS">
-                                <div class="ss1"><img
-                                        src="https://www.hiepsibaotap.com/wp-content/uploads/2018/11/Flash_HD.png"
-                                        style="width:40px;height:40px;"></div>
-                                <div class="ss2"><img
-                                        src="https://img.rankedboost.com/wp-content/uploads/2020/06/Teleport-Enchant-Wild-Rift.png"
-                                        style="width:40px;height:40px;"></div>
-                            </div>
-                        </div>
-                        <div class="titleItems">
-                            <div class="buildTitle">Maximum Characters is thirty!!</div>
-                            <div class="buildItems">
-                                <div class="buildItems1"><img
-                                        src="https://www.hiepsibaotap.com/wp-content/uploads/2018/11/Flash_HD.png"
-                                        style="width:40px;height:40px;"></div>
-                                <div class="buildItems2"><img
-                                        src="https://www.hiepsibaotap.com/wp-content/uploads/2018/11/Flash_HD.png"
-                                        style="width:40px;height:40px;"></div>
-                                <div class="buildItems3"><img
-                                        src="https://www.hiepsibaotap.com/wp-content/uploads/2018/11/Flash_HD.png"
-                                        style="width:40px;height:40px;"></div>
-                                <div class="buildItems4"><img
-                                        src="https://www.hiepsibaotap.com/wp-content/uploads/2018/11/Flash_HD.png"
-                                        style="width:40px;height:40px;"></div>
-                                <div class="buildItems5"><img
-                                        src="https://www.hiepsibaotap.com/wp-content/uploads/2018/11/Flash_HD.png"
-                                        style="width:40px;height:40px;"></div>
-                                <div class="buildItems6"><img
-                                        src="https://www.hiepsibaotap.com/wp-content/uploads/2018/11/Flash_HD.png"
-                                        style="width:40px;height:40px;"></div>
-                            </div>
-                        </div>
-                    </button>
-                    <div class="content">
-                        <div class="skillorderRunes">
-                            <div class="skillOrder">
-                                <table>
-                                    <tr>
-                                        <th>Level</th>
-                                        <th>1</th>
-                                        <th>2</th>
-                                        <th>3</th>
-                                        <th>4</th>
-                                        <th>5</th>
-                                        <th>6</th>
-                                        <th>7</th>
-                                        <th>8</th>
-                                        <th>9</th>
-                                        <th>10</th>
-                                        <th>11</th>
-                                        <th>12</th>
-                                        <th>13</th>
-                                        <th>14</th>
-                                        <th>15</th>
-                                        <th>16</th>
-                                        <th>17</th>
-                                        <th>18</th>
-                                    </tr>
-                                    <tr>
-                                        <td>Skill</td>
-                                        <td>Q</td>
-                                        <td>Q</td>
-                                        <td>Q</td>
-                                        <td>Q</td>
-                                        <td>Q</td>
-                                        <td>Q</td>
-                                        <td>Q</td>
-                                        <td>Q</td>
-                                        <td>Q</td>
-                                        <td>Q</td>
-                                        <td>Q</td>
-                                        <td>Q</td>
-                                        <td>Q</td>
-                                        <td>Q</td>
-                                        <td>Q</td>
-                                        <td>Q</td>
-                                        <td>Q</td>
-                                        <td>Q</td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div class="runes">
-                                <div class="MainRunes">
-                                    <div class="mainRuneTree"><span class>Precision</span></div>
-                                    <div class="keystone">Press the Attack</div>
-                                    <div class="mainRune1">Prescence of mind</div>
-                                    <div class="mainRune2">Legend:Alacrity</div>
-                                    <div class="mainRune3">Coup de Grace</div>
-                                </div>
-                                <div class="SupportRunes">
-                                    <div class="supportRuneTree"><span class>Domination</span></div>
-                                    <div class="supportRune1">Sudden Impact</div>
-                                    <div class="supportRune2">Eyeball Collection</div>
-                                    <div class="supportRune3">Relentless Hunter</div>
-                                </div>
-                                <div class="RuneAttributes">
-                                    <div class="attribute1">Offense:Attack Speed</div>
-                                    <div class="attribute2">Flex:Adaptive Force</div>
-                                    <div class="attribute3">Defense:Health</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mainContent">Between these two, there is a strange relationship. Companies collect
-                            and analyze this data, but rarely do readers get to see it.
-
-                            New data from Amazon, released to The Atlantic, gives us a peek at what, specifically,
-                            readers connect with. These are the most popular highlights in some of the service’s most
-                            popular books.
-
-                            Amazon doesn’t release sales data for Kindles, so the question of what makes the list of
-                            most-popular highlights is somewhat interesting. It takes more than 4,000 highlights to make
-                            something the most popular passage in Pride and Prejudice, but only about 650 for something
-                            to be the most popular highlight in The Lion, the Witch, and the Wardrobe.
-
-                            Below, you’ll find passages from Austen, Tolkien, the Bible, and every tome of Harry Potter.
-                            (With some spoilers—though don’t worry, it’s not that section of Half-Blood Prince.)
-
-                            Are these your favorite passages too? Are they the most beautiful, the most poetic, or just,
-                            well, the most maudlin?
-
-                            The most popular from Pride and Prejudice:
-
-                            It is a truth universally acknowledged, that a single man in possession of a good fortune,
-                            must be in want of a wife.
-
-                            The Lord of the Rings:
-
-                            The wide world is all about you: you can fence yourselves in, but you cannot for ever fence
-                            it out.
-
-                            From the Bible (specifically, the New International Version—the best-selling electronic
-                            version on Amazon):
-
-                            Do not be anxious about anything, but in every situation, by prayer and petition, with
-                            thanksgiving, present your requests to God. And the peace of God, which transcends all
-                            understanding, will guard your hearts and your minds in Christ Jesus.
-
-                            Little Women:
-
-                            There are many Beths in the world, shy and quiet, sitting in corners till needed, and living
-                            for others so cheerfully that no one sees the sacrifices till the little cricket on the
-                            hearth stops chirping, and the sweet, sunshiny presence vanishes, leaving silence and shadow
-                            behind.
-
-                            A Wrinkle In Time:
-
-                            But of course we can’t take any credit for our talents. It’s how we use them that counts.
-
-                            The Lion, the Witch, and the Wardrobe:
-
-                            Wrong will be right,
-                            when Aslan comes in sight,
-                            At the sound of his roar,
-                            sorrows will be no more,
-                            When he bares his teeth,
-                            winter meets its death,
-                            And when he shakes his mane,
-                            we shall have spring again.</div>
-                    </div>
-                </div>
+                <?php } ?>
             </div>
         </div>
     </div>

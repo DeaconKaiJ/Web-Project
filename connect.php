@@ -53,12 +53,12 @@ $levelSkill18 = $_POST['levelSkill18'];
 $paragraph = $_POST['paragraph'];
 
 // Database connection
-$conn = new mysqli('localhost', 'root', '', 'userbuilds');
+$conn = mysqli_connect('localhost', 'root', '', 'userbuilds');
 if ($conn->connect_error) {
     echo "$conn->connect_error";
     die("Connection Failed : " . $conn->connect_error);
 } else {
-    $INSERT = "INSERT into userbuild(buildName, champ, mainKeystone, mainRune, mainRune1, mainRune2, mainRune3,
+    $INSERT = "INSERT into newuserbuild(buildName, champ, mainKeystone, mainRune, mainRune1, mainRune2, mainRune3,
     subKeystone, subRune1, subRune2, addRune1, addRune2, addRune3, ss1, ss2, item1, item2, item3, item4, item5, item6, skill1,
         skill2, skill3, skill4, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, l14, l15, l16, l17, l18, paragraph) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($INSERT);
@@ -114,3 +114,4 @@ if ($conn->connect_error) {
     $stmt->close();
     $conn->close();
 }
+?>
