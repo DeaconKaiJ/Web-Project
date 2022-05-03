@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles2.css">
+    <script src="https://kit.fontawesome.com/4e724250be.js" crossorigin="anonymous"></script>
+    <script src="allItems.js" defer></script>
+    <script src="summonerSpells.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="FlexBox-Container">
+        <div class="FlexAll Flex1">
+            <div class="pageTitle"><span class>League of Legends - The Essentials</span></div>
+            <div class="NavButtons">
+                <a class="NavBTN HomeBTN" href="index2.html"><span class>Home</span></a>
+                <a class="NavBTN KeyTermsBTN" href="metaKeyTerms.html"><span class>Key Terminologies/Meta</span></a>
+                <a class="NavBTN GuideBTN" href="guide.html"><span class>Guide</span></a>
+            </div>
+            <div class="SearchBars">
+                <div class="sPlayer">
+                    <span class>Search a Player</span>
+                    <input class="sPlayer_txt" id="sPlayer_txt" type="search" placeholder="Search a Player">
+                    <button type="button" class="sChampPlayerBTN" id="sChampPlayerBTN"></button>
+                    <div class="modalPlayer" id="modalPlayer">
+                        <!-- Modal content -->
+                        <div class="modal-contentPlayer">
+                            <div class="modal-headerPlayer" id="modal-headerPlayer">
+                                <span class="closePlayer" id="closePlayer">&times;</span>
+                                <div id="headerPlayer"></div>
+                            </div>
+                            <div class="modal-bodyPlayer" playerSearchContainer>
+                                <template playerSearch>
+                                    <div class="templatePlayer">
+                                        <div class="playerImgSearched" id="playerImgSearched" playerImgSearched></div>
+                                        <div class="statsSearched">
+                                            <div class="playerNameSearched" id="playerNameSearched" playerNameSearched>
+                                            </div>
+                                            <div class="KDA">
+                                                <div class="playerKillSearched" id="playerKillSearched"
+                                                    playerKillSearched></div>
+                                                <div class="playerDeathsSearched" id="playerDeathsSearched"
+                                                    playerDeathsSearched></div>
+                                                <div class="playerAssistsSearched" id="playerAssistsSearched"
+                                                    playerAssistsSearched></div>
+                                            </div>
+                                            <div class="playerKDASearched" id="playerKDASearched" playerKDASearched>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sChamp">
+                    <span class>Search a Champion</span>
+                    <input class="sChamp_txt" id="sChamp_txt" type="search" placeholder="Choose a Champion">
+                    <div class="listOptions" id="listOptions">
+                    </div>
+                    <button type="button" class="sChampSearchBTN" id="sChampSearchBTN"></button>
+                    <div class="modalChamp" id="modalChamp">
+                        <!-- Modal content -->
+                        <div class="modal-contentChamp">
+                            <div class="modal-headerChamp" id="modal-headerChamp">
+                                <span class="closeChamp" id="closeChamp">&times;</span>
+                                <div id="headerChamp"></div>
+                            </div>
+                            <div class="modal-bodyChamp">
+                                <div class=champStats>
+                                    <div class="dmgStats">
+                                        <div class="AD" id="AD"></div>
+                                        <div class="AS" id="AS"></div>
+                                        <div class="AR" id="AR"></div>
+                                        <div class="MS" id="MS"></div>
+                                    </div>
+                                    <div class="otherStats">
+                                        <div class="HP" id="HP"></div>
+                                        <div class="ARM" id="ARM"></div>
+                                        <div class="MR" id="MR"></div>
+                                        <div class="MN" id="MN"></div>
+                                    </div>
+                                </div>
+                                <br><br>
+                                <div class="champAbilities">
+                                    <div class="P" id="P"></div>
+                                    <br>
+                                    <div class="Q" id="Q"></div>
+                                    <br>
+                                    <div class="W" id="W"></div>
+                                    <br>
+                                    <div class="E" id="E"></div>
+                                    <br>
+                                    <div class="R" id="R"></div>
+                                </div>
+                                <br>
+                                <div class="recommenededItems">
+                                    Items to Consider:
+                                    <div class="r1" id="r1"></div>
+                                    <div class="r2" id="r2"></div>
+                                    <div class="r3" id="r3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Legal"><span class>This project is not endorsed by Riot Games and does not reflect
+                    the views or opinions of Riot Games or anyone officially involved in producing
+                    or managing League of Legends. League of Legends and Riot Games are trademarks or
+                    registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.</span></div>
+        </div>
+        <div class="FlexAll Flex2">
+            <div class="modalImg" id="modalImg">
+                <script src="getPlayer.js"></script>
+                <script src="champSearch.js"></script>
+            </div>
+            <div class="MKTheader">League of Legends - Need to know</div>
+            <div class="MKTbody">
+                <div class="meta">
+                    <p>
+                        The information within this page should be used by players who are not total beginners, we
+                        recommend that if you are a total beginner then please visit our guides page. The meta is what
+                        is working really well right now in League of Legends, some techniques however can be
+                        challenging
+                        and require some skill so that is why we dont recommend it for completely new players.
+                    </p>
+                    <br>
+                    <h1>Top Lane - Meta</h1>
+                    <p>
+                        For the top lane, right now in games lane bullies and split pushers are working really well. The
+                        early game can create such as snow ball effect on the game that if you can bully your opponenet
+                        out of lane and gain a considerable lead, you can often win the game rather quickly. In
+                        contrast, games that last a long time can be dominated by pressure on side lanes from great
+                        split pushers. Your choice on whether to pick a lane bully or split pusher should rely on your
+                        enjoyability of that pick as well as what the enemy picks. For this top lane we recommend, Sion
+                        and Yorick for split pushing. For lane bully, we recommend Quinn and Fiora.
+                    </p>
+                    <br>
+                    <div class="metaPicks">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/Sion.png" height="80px" width="80px">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/Yorick.png" height="80px" width="80px">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/Quinn.png" height="80px" width="80px">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/Fiora.png" height="80px" width="80px">
+                    </div>
+                    <br>
+                    <h1>Jungle - Meta</h1>
+                    <p>
+                        With this meta being so heavily influenced by early game pressure, we recommened you play a
+                        jungler that excels early game. Your role will be to pressure the lanes as much as possible in
+                        contrast to the old meta of farming. Assassins are doing really well as well as some high
+                        mobility tank picks. For the Assassin we recommend Wukong and Diana. For the tank picks we
+                        recommend, Volibear or Rammus.
+                    </p>
+                    <br>
+                    <div class="metaPicks">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/MonkeyKing.png" height="80px" width="80px">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/Diana.png" height="80px" width="80px">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/Volibear.png" height="80px" width="80px">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/Rammus.png" height="80px" width="80px">
+                    </div>
+                    <br>
+                    <h1>Mid Lane - Meta</h1>
+                    <p>
+                        The mid lane is the one role with never a clear defined meta, with both adc and top lane champs
+                        being included in the mid lane, it is a mess of a lane for meta. Typically for the mid lane, it
+                        is recommened you play what you can however few champs are doing really well. We recommened
+                        Annie, Veigar, Yasuo and Tristana.
+                    </p>
+                    <br>
+                    <div class="metaPicks">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/Annie.png" height="80px" width="80px">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/Veigar.png" height="80px" width="80px">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/Yasuo.png" height="80px" width="80px">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/Tristana.png" height="80px" width="80px">
+                    </div>
+                    <br>
+                    <h1>ADC - Meta</h1>
+                    <p>
+                        The ADC meta is a complete mess, there are less attack damage based champions doing well right
+                        now than their attack damage counter part. There are still a few hypercarry adcs to pick which
+                        can do amazing in the game however they are difficult champions. The safer picks are the non
+                        attack damage champs. For this role we recommend Twitch, Vayne, Swain and Veigar.
+                    </p>
+                    <br>
+                    <div class="metaPicks">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/Twitch.png" height="80px" width="80px">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/Vayne.png" height="80px" width="80px">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/Swain.png" height="80px" width="80px">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/Veigar.png" height="80px" width="80px">
+                    </div>
+                    <br>
+                    <h1>Support - Meta</h1>
+                    <p>
+                        Heals, heals, heals. That is support right now in this meta. Tanking or grab picks still have
+                        their place if you can play it correctly but healing champions are big right now. Time in lane
+                        is really important and a bad trade can be completely turned around with a healing support. For
+                        this support role we recommending Soraka, Nami, Janna or Renata Glasc.
+                    </p>
+                    <br>
+                    <div class="metaPicks">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/Soraka.png" height="80px" width="80px">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/Nami.png" height="80px" width="80px">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/Janna.png" height="80px" width="80px">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/Renata.png" height="80px" width="80px">
+                    </div>
+                    <br>
+                </div>
+                <br><br>
+                <div class="keyTerms">
+                    <h1>Key Terms</h1>
+                    <br>
+                    <p>Lane Bully- A champion that excels in the early game and trading with their opponenet </p>
+                    <br>
+                    <p>Split Pusher- A champion that prefers to push side lanes in the match instead of fighting with the team</p>
+                    <br>
+                    <p>Hypercarry- A champion that will deal exceptional damage given the opportunity, enough to solo carry a team</p>
+                    <br>
+                    <p>Grab picks- A champion with a grab ability such as Thresh or Blitzcrank.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="collapse.js"></script>
+</body>
+
+</html>

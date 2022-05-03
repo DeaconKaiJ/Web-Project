@@ -680,3 +680,28 @@ td {
     flex-direction: row;
     gap: 10px;
 }
+.MKTheader{
+    height: auto;
+    width: 100%;
+    background-color: #555;
+    font-size: 250%;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+.MKTbody{
+    width: 100%;
+    height :auto;
+    background-color: black;
+    padding: 20px;
+}
+.meta{
+    color: white;
+}
+.keyTerms{
+    color: white;
+}
+.metaPicks{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+}
