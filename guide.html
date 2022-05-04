@@ -22,10 +22,13 @@
                 <a class="NavBTN GuideBTN" href="guide.html"><span class>Guide</span></a>
             </div>
             <div class="SearchBars">
+                <span>Search Bars</span>
                 <div class="sPlayer">
-                    <span class>Search a Player</span>
-                    <input class="sPlayer_txt" id="sPlayer_txt" type="search" placeholder="Search a Player">
-                    <button type="button" class="sChampPlayerBTN" id="sChampPlayerBTN"></button>
+                    <div class="searchPlayer">
+                        <input class="sPlayer_txt" id="sPlayer_txt" type="search" placeholder="Search a Player">
+                        <button type="button" class="sChampPlayerBTN" id="sChampPlayerBTN"><i
+                                class="fa-solid fa-magnifying-glass" style="font-size: 10px;"></i></button>
+                    </div>
                     <div class="modalPlayer" id="modalPlayer">
                         <!-- Modal content -->
                         <div class="modal-contentPlayer">
@@ -59,11 +62,13 @@
                 </div>
 
                 <div class="sChamp">
-                    <span class>Search a Champion</span>
-                    <input class="sChamp_txt" id="sChamp_txt" type="search" placeholder="Choose a Champion">
+                    <div class="searchChamp">
+                        <input class="sChamp_txt" id="sChamp_txt" type="search" placeholder="Choose a Champion">
+                        <button type="button" class="sChampSearchBTN" id="sChampSearchBTN"><i
+                                class="fa-solid fa-magnifying-glass" style="font-size: 10px;"></i></button>
+                    </div>
                     <div class="listOptions" id="listOptions">
                     </div>
-                    <button type="button" class="sChampSearchBTN" id="sChampSearchBTN"></button>
                     <div class="modalChamp" id="modalChamp">
                         <!-- Modal content -->
                         <div class="modal-contentChamp">

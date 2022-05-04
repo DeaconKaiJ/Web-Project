@@ -24,7 +24,7 @@ if ($conn->connect_error) {
     <script src="https://kit.fontawesome.com/4e724250be.js" crossorigin="anonymous"></script>
     <script src="allItems.js" defer></script>
     <script src="summonerSpells.js" defer></script>
-    <title>test Page</title>
+    <title>Landing Page</title>
 </head>
 
 <body>
@@ -37,10 +37,12 @@ if ($conn->connect_error) {
                 <a class="NavBTN GuideBTN" href="guide.html"><span class>Guide</span></a>
             </div>
             <div class="SearchBars">
+                <span>Search Bars</span>
                 <div class="sPlayer">
-                    <span class>Search a Player</span>
-                    <input class="sPlayer_txt" id="sPlayer_txt" type="search" placeholder="Search a Player">
-                    <button type="button" class="sChampPlayerBTN" id="sChampPlayerBTN"></button>
+                    <div class="searchPlayer">
+                        <input class="sPlayer_txt" id="sPlayer_txt" type="search" placeholder="Search a Player">
+                        <button type="button" class="sChampPlayerBTN" id="sChampPlayerBTN"><i class="fa-solid fa-magnifying-glass" style="font-size: 10px;"></i></button>
+                    </div>
                     <div class="modalPlayer" id="modalPlayer">
                         <!-- Modal content -->
                         <div class="modal-contentPlayer">
@@ -71,11 +73,12 @@ if ($conn->connect_error) {
                 </div>
 
                 <div class="sChamp">
-                    <span class>Search a Champion</span>
-                    <input class="sChamp_txt" id="sChamp_txt" type="search" placeholder="Choose a Champion">
+                    <div class="searchChamp">
+                        <input class="sChamp_txt" id="sChamp_txt" type="search" placeholder="Choose a Champion">
+                        <button type="button" class="sChampSearchBTN" id="sChampSearchBTN"><i class="fa-solid fa-magnifying-glass" style="font-size: 10px;"></i></button>
+                    </div>
                     <div class="listOptions" id="listOptions">
                     </div>
-                    <button type="button" class="sChampSearchBTN" id="sChampSearchBTN"></button>
                     <div class="modalChamp" id="modalChamp">
                         <!-- Modal content -->
                         <div class="modal-contentChamp">
@@ -449,7 +452,7 @@ if ($conn->connect_error) {
                     <script src="allRunes.js"></script>
                 </div>
                 <?php foreach ($builds as $build) { ?>
-                    <div class="uBuild">
+                    <div class="uBuild" id=<?php echo htmlspecialchars($build['id']) ?>>
                         <button type="button" class="collapsible">
                             <div class="champPicture"><img src="http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/<?php echo htmlspecialchars($build['champ']) ?>.png" style="width:100px;height:100px;"></div>
                             <div class="champNameSkillOrder">
@@ -604,6 +607,7 @@ if ($conn->connect_error) {
             </div>
         </div>
     </div>
+    <script src="filter.js"></script>
     <script src="collapse.js"></script>
 </body>
 

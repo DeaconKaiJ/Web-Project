@@ -143,6 +143,9 @@ searchButton.onclick = async function () {
             }
         })
 }
+
+
+
 spanChamp.onclick = function () {
     modalChamp.style.display = "none";
     champImg.style.display = "none"
