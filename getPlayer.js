@@ -1,4 +1,4 @@
-const apiKey = "RGAPI-7e31d54e-e66a-42ea-99b7-89767e0bbe2c";
+const apiKey = "RGAPI-6d88a743-ad02-4739-8d9b-fbcfc5349382";
 var searchBtn = document.getElementById('sChampPlayerBTN');
 var inputName = document.getElementById('sPlayer_txt');
 var modalPlayer = document.getElementById("modalPlayer");
@@ -48,6 +48,7 @@ searchBtn.addEventListener("click", function () {
                                         const playerDeaths = currentHist.querySelector("[playerDeathsSearched]")
                                         const playerAssists = currentHist.querySelector("[playerAssistsSearched]")
                                         const playerImgKDA = currentHist.querySelector("[playerKDASearched]")
+                                        const playerResult = currentHist.querySelector("[playerResultSearched]")
                                         playerImg.innerHTML = "<img src='" + imgimg + "'" + " " + "height='" + imgimgheight + "'" + " " + "width='" + imgimgwidth + "'>";
                                         champName = data3.info.participants[j].championName;
                                         if (champName == "MonkeyKing") { champName = "Wukong" };
@@ -58,6 +59,10 @@ searchBtn.addEventListener("click", function () {
                                         KDA = (data3.info.participants[j].kills + data3.info.participants[j].assists) / data3.info.participants[j].deaths;
                                         KDA = KDA.toFixed(2);
                                         playerImgKDA.textContent = "KDA: " + KDA;
+                                        console.log(data3.info.participants[j].win);
+                                        var result = data3.info.participants[j].win;
+                                        if (result == 1){playerResult.textContent = 'Win'};
+                                        if (result == 0){playerResult.textContent = 'Loss'};
                                         historyContainer.append(currentHist)
                                     }
                                 }

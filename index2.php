@@ -64,6 +64,8 @@ if ($conn->connect_error) {
                                             </div>
                                             <div class="playerKDASearched" id="playerKDASearched" playerKDASearched>
                                             </div>
+                                            <div class="playerResultSearched" id="playerResultSearched" playerResultSearched>
+                                            </div>
                                         </div>
                                     </div>
                                 </template>
