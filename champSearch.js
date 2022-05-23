@@ -81,8 +81,7 @@ searchButton.onclick = async function () {
         .then(res => res.json())
         .then(data => data.data)
         .then(data => {
-            for (var key in data)
-
+            for (var key in data)   
             AD.textContent = "AD:" + data[key].stats.attackdamage
             AS.textContent = "AS:" + data[key].stats.attackspeed
             AR.textContent = "AR:" + data[key].stats.attackrange
