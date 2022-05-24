@@ -1,4 +1,4 @@
-const apiKey = "RGAPI-f53deaaf-73e3-4695-ba0a-3ca01debcc2c";
+const apiKey = "RGAPI-3cf83465-097f-470a-a08f-afaf6a3c838b";
 var searchBtn = document.getElementById('sChampPlayerBTN');
 var inputName = document.getElementById('sPlayer_txt');
 var modalPlayer = document.getElementById("modalPlayer");
