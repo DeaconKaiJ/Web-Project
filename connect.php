@@ -110,8 +110,9 @@ if ($conn->connect_error) {
         $paragraph
     );
     $stmt->execute();
-    echo "Registration successfully...";
     $stmt->close();
     $conn->close();
+    
 }
+header("Location: index2.php");
 ?>
