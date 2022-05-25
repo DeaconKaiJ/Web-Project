@@ -77,6 +77,22 @@ searchButton.onclick = async function () {
     imgWidth = "auto"
     champImg.innerHTML =  "<img src='" + imgLink + "'" + " " + "height='" + imgHeight + "'" + " " + "width='" + imgWidth + "'>";
     champImg.style.display ="block";
+    passive.textContent = "Invalid Please try Again";
+    qab.textContent = "";
+    wab.textContent = "";
+    eab.textContent = "";
+    rab.textContent = "";
+    AD.textContent = "";
+    AS.textContent = "";
+    AR.textContent = "";
+    MS.textContent = "";
+    HP.textContent = "";
+    ARM.textContent = "";
+    MR.textContent = "";
+    MN.textContent = "";
+    r1.innerHTML = "";
+    r2.innerHTML ="";
+    r3.innerHTML ="";
     fetch(champLink)
         .then(res => res.json())
         .then(data => data.data)

@@ -1,27 +1,22 @@
-const apiKey = "RGAPI-3cf83465-097f-470a-a08f-afaf6a3c838b";
+const apiKey = "RGAPI-f4259c3c-8496-4d6e-a46e-5d49acf0900d";
 var searchBtn = document.getElementById('sChampPlayerBTN');
 var inputName = document.getElementById('sPlayer_txt');
 var modalPlayer = document.getElementById("modalPlayer");
 var spanPlayer = document.getElementById("closePlayer");
 var champPlayer = document.getElementById("headerPlayer");
-var champPlayerImg = document.getElementById("playerImgSearched");
-var champPlayerName = document.getElementById("playerNameSearched");
-var champPlayerKill = document.getElementById("playerKillSearched");
-var champPlayerDeath = document.getElementById("playerDeathsSearched");
-var champPlayerAssist = document.getElementById("playerAssistsSearched");
-var champPlayerKDA = document.getElementById("playerKDASearched");
 const historyTemplate = document.querySelector("[playerSearch]");
 const historyContainer = document.querySelector("[playerSearchContainer]");
+var failTest = document.getElementById("failTest");
 
 searchBtn.addEventListener("click", function () {
     while (historyContainer.hasChildNodes()) {
         historyContainer.removeChild(historyContainer.firstChild);
     }
-
     playerName = inputName.value;
     champPlayer.textContent = playerName;
     const link = "https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + playerName + "?api_key=" + apiKey;
     modalPlayer.style.display = "block";
+    failTest.textContent ="Invalid Please Try Again";
     fetch(link)
         .then(res => res.json())
         .then(data => {
@@ -38,6 +33,7 @@ searchBtn.addEventListener("click", function () {
                                 userLength = data3.info.participants.length;
                                 for (j = 0; j < userLength; j++) {
                                     if (data3.info.participants[j].puuid == userPuuid) {
+                                        failTest.textContent = "";
                                         imgimg = "http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/" + data3.info.participants[j].championName + ".png"
                                         imgimgheight = "100px";
                                         imgimgwidth = "auto";
@@ -71,9 +67,8 @@ searchBtn.addEventListener("click", function () {
 
                 })
         })
-
+    
 })
-
 spanPlayer.onclick = function () {
     modalPlayer.style.display = "none";
 }
