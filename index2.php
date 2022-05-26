@@ -610,7 +610,6 @@ if ($conn->connect_error) {
             </div>
         </div>
     </div>
-    <script src="filter.js"></script>
     <script src="collapse.js"></script>
 </body>
 
