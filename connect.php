@@ -52,7 +52,6 @@ $levelSkill18 = $_POST['levelSkill18'];
 
 $paragraph = $_POST['paragraph'];
 
-// Database connection
 $conn = mysqli_connect('localhost', 'root', '', 'userbuilds');
 if ($conn->connect_error) {
     echo "$conn->connect_error";

@@ -55,7 +55,6 @@ searchBtn.addEventListener("click", function () {
                                         KDA = (data3.info.participants[j].kills + data3.info.participants[j].assists) / data3.info.participants[j].deaths;
                                         KDA = KDA.toFixed(2);
                                         playerImgKDA.textContent = "KDA: " + KDA;
-                                        console.log(data3.info.participants[j].win);
                                         var result = data3.info.participants[j].win;
                                         if (result == 1){playerResult.textContent = 'Win'};
                                         if (result == 0){playerResult.textContent = 'Loss'};

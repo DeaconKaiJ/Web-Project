@@ -180,29 +180,20 @@ a:visited {
     border: 1px solid green;
 }
 
-/* The Modal (background) */
 .modal {
     display: none;
-    /* Hidden by default */
     position: absolute;
-    /* Stay in place */
     z-index: 1;
-    /* Sit on top */
     left: 0;
     top: 0;
     width: 100%;
-    /* Full width */
     height: 100%;
-    /* Full height */
     overflow: auto;
-    /* Enable scroll if needed */
     background-color: rgb(0, 0, 0);
-    /* Fallback color */
     background-color: rgba(0, 0, 0, 0.4);
-    /* Black w/ opacity */
 }
 
-/* Modal Content */
+
 .modal-content {
     margin: auto;
     margin-top: 20px;
@@ -227,7 +218,7 @@ a:visited {
     overflow-y: auto;
 }
 
-/* The Close Button */
+
 .close {
     color: #aaaaaa;
     float: right;
@@ -242,29 +233,21 @@ a:visited {
     cursor: pointer;
 }
 
-/* The Modal (background) */
+
 .modalChamp {
     display: none;
-    /* Hidden by default */
     position: absolute;
-    /* Stay in place */
     z-index: 1;
-    /* Sit on top */
     left: 0;
     top: 0;
     width: 100%;
-    /* Full width */
     height: 100%;
-    /* Full height */
     overflow: auto;
-    /* Enable scroll if needed */
     background-color: rgb(0, 0, 0);
-    /* Fallback color */
     background-color: rgba(0, 0, 0, 0.4);
-    /* Black w/ opacity */
 }
 
-/* Modal Content */
+
 .modal-contentChamp {
     margin: auto;
     margin-top: 20px;
@@ -289,7 +272,7 @@ a:visited {
     overflow-y: auto;
 }
 
-/* The Close Button */
+
 .closeChamp {
     color: #aaaaaa;
     float: right;
@@ -297,29 +280,20 @@ a:visited {
     font-weight: bold;
 }
 
-/* The Modal (background) */
+
 .modalPlayer {
     display: none;
-    /* Hidden by default */
     position: absolute;
-    /* Stay in place */
     z-index: 1;
-    /* Sit on top */
     left: 0;
     top: 0;
     width: 100%;
-    /* Full width */
     height: 100%;
-    /* Full height */
     overflow: auto;
-    /* Enable scroll if needed */
     background-color: rgb(0, 0, 0);
-    /* Fallback color */
     background-color: rgba(0, 0, 0, 0.4);
-    /* Black w/ opacity */
 }
 
-/* Modal Content */
 .modal-contentPlayer {
     margin: auto;
     margin-top: 20px;
@@ -344,7 +318,6 @@ a:visited {
     overflow-y: auto;
 }
 
-/* The Close Button */
 .closePlayer {
     color: #aaaaaa;
     float: right;

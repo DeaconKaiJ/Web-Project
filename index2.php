@@ -44,7 +44,6 @@ if ($conn->connect_error) {
                         <button type="button" class="sChampPlayerBTN" id="sChampPlayerBTN"><i class="fa-solid fa-magnifying-glass" style="font-size: 10px;"></i></button>
                     </div>
                     <div class="modalPlayer" id="modalPlayer">
-                        <!-- Modal content -->
                         <div class="modal-contentPlayer">
                             <div class="modal-headerPlayer" id="modal-headerPlayer">
                                 <span class="closePlayer" id="closePlayer">&times;</span>
@@ -83,7 +82,6 @@ if ($conn->connect_error) {
                     <div class="listOptions" id="listOptions">
                     </div>
                     <div class="modalChamp" id="modalChamp">
-                        <!-- Modal content -->
                         <div class="modal-contentChamp">
                             <div class="modal-headerChamp" id="modal-headerChamp">
                                 <span class="closeChamp" id="closeChamp">&times;</span>
@@ -142,9 +140,7 @@ if ($conn->connect_error) {
             <div class="userBuilds">
                 <div class="createFilter">
                     <button type="button" class="createButton"><i class="fa-solid fa-circle-plus" style="font-size: 32px;"></i></button>
-                    <!-- The Modal -->
-                    <div class="modal">
-                        <!-- Modal content -->
+                    <div class="modal">                      
                         <div class="modal-content">
                             <div class="modal-header">
                                 <span class="close">&times;</span>
