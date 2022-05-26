@@ -1,3 +1,4 @@
+//Player Search will not work without an actiavted API key from riot developer portal
 const apiKey = "RGAPI-f4259c3c-8496-4d6e-a46e-5d49acf0900d";
 var searchBtn = document.getElementById('sChampPlayerBTN');
 var inputName = document.getElementById('sPlayer_txt');
